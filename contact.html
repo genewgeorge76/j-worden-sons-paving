@@ -210,7 +210,9 @@
       <!-- RIGHT: Estimate Form -->
       <div class="estimate-form-wrap">
         <h2>📋 Estimate <span style="color:var(--gold)">Request Form</span></h2>
-        <form id="estimate-form" novalidate>
+        <form id="estimate-form" name="estimate-form" data-netlify="true" data-netlify-honeypot="bot-field" novalidate>
+          <input type="hidden" name="form-name" value="estimate-form" />
+          <p class="form-group" style="display:none"><label>Don't fill this out if you're human: <input name="bot-field" /></label></p>
           <div class="form-row">
             <div class="form-group">
               <label for="fname">First Name <span class="req">*</span></label>
@@ -314,7 +316,7 @@
     });
   });
 
-  // Form submission — shows success message; replace with real backend/Formspree/Kickserv URL if needed
+  // Form submission — submits to Netlify Forms backend
   document.getElementById('estimate-form').addEventListener('submit', function(e) {
     e.preventDefault();
     const required = this.querySelectorAll('[required]');
@@ -329,11 +331,21 @@
     });
     if (!valid) return;
 
-    // TODO: Replace this block with a fetch() call to Formspree, Netlify Forms, or Kickserv
-    // Example: fetch('https://formspree.io/f/YOUR_ID', { method:'POST', body: new FormData(this) })
-    document.getElementById('success-msg').style.display = 'block';
-    this.querySelectorAll('input, select, textarea').forEach(f => f.value = '');
-    window.scrollTo({ top: document.getElementById('success-msg').offsetTop - 100, behavior: 'smooth' });
+    const formData = new FormData(this);
+    const form = this;
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(formData).toString()
+    })
+      .then(() => {
+        document.getElementById('success-msg').style.display = 'block';
+        form.querySelectorAll('input:not([type="hidden"]), select, textarea').forEach(f => f.value = '');
+        window.scrollTo({ top: document.getElementById('success-msg').offsetTop - 100, behavior: 'smooth' });
+      })
+      .catch(() => {
+        alert('Sorry, there was a problem submitting your request. Please call us at 804-446-1296 or email info@jworden.com.');
+      });
   });
 </script>
 </body>

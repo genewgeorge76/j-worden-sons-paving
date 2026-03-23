@@ -11,3 +11,7 @@
   from = "/portfolio"
   to   = "/portfolio.html"
   status = 200
+
+[forms]
+  [forms.spam_filter]
+    enabled = true
