@@ -3,6 +3,18 @@
   command = ""
 
 [[redirects]]
+  from = "https://j-worden-sons-pavinggemini.netlify.app/*"
+  to   = "https://www.jwordenasphaltpaving.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://jwordenasphaltpaving.com/*"
+  to   = "https://www.jwordenasphaltpaving.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/contact"
   to   = "/contact.html"
   status = 200
