@@ -1,0 +1,590 @@
+/* J. Worden & Sons Asphalt Paving — Stylesheet */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --black:    #111111;
+  --charcoal: #2b2b2b;
+  --asphalt:  #3d3d3d;
+  --gold:     #c8a84b;
+  --gold-light: #e0c06a;
+  --white:    #ffffff;
+  --off-white:#f5f5f0;
+  --gray:     #888888;
+  --light-gray: #e8e8e0;
+  --max-width: 1100px;
+  --radius: 4px;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  color: var(--charcoal);
+  background: var(--white);
+  line-height: 1.7;
+}
+
+/* ── Utility ── */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ── Header / Nav ── */
+header {
+  background: var(--black);
+  border-bottom: 3px solid var(--gold);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1.5rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-name {
+  font-size: 1.15rem;
+  font-weight: bold;
+  color: var(--white);
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+}
+
+.logo-tagline {
+  font-size: 0.7rem;
+  color: var(--gold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav a {
+  color: var(--light-gray);
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+nav a:hover, nav a:focus {
+  color: var(--gold);
+  outline: none;
+}
+
+/* ── Hero ── */
+.hero {
+  background: linear-gradient(160deg, var(--black) 0%, var(--asphalt) 100%);
+  color: var(--white);
+  padding: 6rem 1.5rem 5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 40px,
+    rgba(255,255,255,0.015) 40px,
+    rgba(255,255,255,0.015) 80px
+  );
+  pointer-events: none;
+}
+
+.hero-badge {
+  display: inline-block;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.9rem;
+  border-radius: 20px;
+  margin-bottom: 1.5rem;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  line-height: 1.18;
+  margin-bottom: 1rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero h1 span {
+  color: var(--gold);
+}
+
+.hero-sub {
+  font-size: 1.1rem;
+  color: var(--light-gray);
+  max-width: 620px;
+  margin: 0 auto 2.5rem;
+}
+
+.hero-cta {
+  display: inline-flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.85rem 2rem;
+  border-radius: var(--radius);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.9rem;
+  font-weight: bold;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--gold);
+  color: var(--black);
+  border: 2px solid var(--gold);
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  background: var(--gold-light);
+  border-color: var(--gold-light);
+  outline: none;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--white);
+  border: 2px solid rgba(255,255,255,0.45);
+}
+
+.btn-outline:hover, .btn-outline:focus {
+  border-color: var(--gold);
+  color: var(--gold);
+  outline: none;
+}
+
+/* ── Differentiator Banner ── */
+.diff-banner {
+  background: var(--gold);
+  color: var(--black);
+  text-align: center;
+  padding: 0.8rem 1.5rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.85rem;
+  font-weight: bold;
+  letter-spacing: 0.04em;
+}
+
+/* ── Stats Bar ── */
+.stats-bar {
+  background: var(--off-white);
+  border-bottom: 1px solid var(--light-gray);
+  padding: 2.2rem 1.5rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.stat-item strong {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--asphalt);
+  line-height: 1;
+}
+
+.stat-item span {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.78rem;
+  color: var(--gray);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* ── Sections ── */
+section {
+  padding: 5rem 1.5rem;
+}
+
+section:nth-child(even) {
+  background: var(--off-white);
+}
+
+.section-label {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.6rem;
+}
+
+.section-title {
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  line-height: 1.25;
+  color: var(--black);
+  margin-bottom: 1.2rem;
+}
+
+.section-body {
+  max-width: 680px;
+  color: var(--charcoal);
+  font-size: 1.05rem;
+}
+
+/* ── Two-col layout ── */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.two-col.reverse {
+  direction: rtl;
+}
+
+.two-col.reverse > * {
+  direction: ltr;
+}
+
+/* ── Timeline ── */
+.timeline {
+  list-style: none;
+  border-left: 3px solid var(--gold);
+  padding-left: 1.8rem;
+  margin-top: 2rem;
+}
+
+.timeline li {
+  position: relative;
+  margin-bottom: 1.6rem;
+}
+
+.timeline li::before {
+  content: '';
+  position: absolute;
+  left: -2.18rem;
+  top: 0.45rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: 2px solid var(--white);
+}
+
+.timeline-year {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: var(--gold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.timeline-event {
+  font-size: 1rem;
+  color: var(--charcoal);
+}
+
+/* ── Services Grid ── */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.service-card {
+  background: var(--white);
+  border: 1px solid var(--light-gray);
+  border-top: 3px solid var(--gold);
+  padding: 1.8rem;
+  border-radius: var(--radius);
+}
+
+.service-card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.6rem;
+  color: var(--black);
+}
+
+.service-card p {
+  font-size: 0.92rem;
+  color: var(--gray);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+/* ── Commercial Clients ── */
+.clients-section {
+  text-align: center;
+}
+
+.clients-section .section-title,
+.clients-section .section-label {
+  text-align: center;
+}
+
+.clients-section .section-body {
+  margin: 0 auto 3rem;
+  text-align: left;
+}
+
+.clients-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.client-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 130px;
+  height: 70px;
+  border: 2px solid var(--light-gray);
+  border-radius: var(--radius);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  color: var(--charcoal);
+  letter-spacing: 0.03em;
+  background: var(--white);
+}
+
+/* ── Standard section ── */
+.standard-highlight {
+  background: var(--black);
+  color: var(--white);
+}
+
+.standard-highlight .section-title {
+  color: var(--white);
+}
+
+.standard-highlight .section-body {
+  color: var(--light-gray);
+}
+
+.standard-box {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(200,168,75,0.3);
+  border-radius: var(--radius);
+  padding: 2rem 2.5rem;
+  margin-top: 2rem;
+}
+
+.standard-number {
+  font-size: 4rem;
+  font-weight: bold;
+  color: var(--gold);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.standard-desc {
+  font-size: 1rem;
+  color: var(--light-gray);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.65;
+}
+
+/* ── Awards ── */
+.awards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.award-card {
+  background: var(--white);
+  border: 1px solid var(--light-gray);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  border-radius: var(--radius);
+}
+
+.award-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.award-card h3 {
+  font-size: 0.95rem;
+  color: var(--black);
+  margin-bottom: 0.3rem;
+}
+
+.award-card p {
+  font-size: 0.82rem;
+  color: var(--gray);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ── Contact ── */
+.contact-section {
+  background: var(--charcoal);
+  color: var(--white);
+  text-align: center;
+}
+
+.contact-section .section-title {
+  color: var(--white);
+}
+
+.contact-section .section-body {
+  color: var(--light-gray);
+  margin: 0 auto 2.5rem;
+  text-align: center;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1.5rem;
+  max-width: 760px;
+  margin: 0 auto 2.5rem;
+  text-align: left;
+}
+
+.contact-item {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 1.4rem 1.6rem;
+  border-radius: var(--radius);
+}
+
+.contact-item dt {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.3rem;
+}
+
+.contact-item dd {
+  font-size: 0.95rem;
+  color: var(--white);
+}
+
+.contact-item dd a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.contact-item dd a:hover {
+  color: var(--gold);
+}
+
+/* ── Footer ── */
+footer {
+  background: var(--black);
+  color: var(--gray);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.8;
+  border-top: 1px solid var(--asphalt);
+}
+
+footer p + p {
+  margin-top: 0.3rem;
+}
+
+footer a {
+  color: var(--gold);
+  text-decoration: none;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .two-col {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .two-col.reverse {
+    direction: ltr;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .standard-box {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero {
+    padding: 4rem 1.5rem 3.5rem;
+  }
+}
