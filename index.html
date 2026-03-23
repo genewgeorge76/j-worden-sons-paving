@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="J. Worden &amp; Sons Asphalt Paving — 4th-Generation, Richmond VA. Licensed, insured, and trusted by KFC, Arby's, Taco Bell, and homeowners since 1984. Call 804-446-1296 for a free estimate." />
+  <meta name="keywords" content="asphalt paving Richmond VA, paving contractor Chester VA, driveway paving, commercial paving, J Worden Sons, Worden paving, 804-446-1296" />
+  <title>J. Worden &amp; Sons Asphalt Paving | Richmond, VA | Since 1984</title>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="J. Worden &amp; Sons Asphalt Paving | Richmond, VA" />
+  <meta property="og:description" content="4th-Generation paving since 1984. Trusted by KFC, Arby's &amp; Taco Bell. Call 804-446-1296." />
+  <meta property="og:type" content="website" />
+
+  <style>
+    /* ── Reset & Base ─────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black:   #0a0a0a;
+      --asphalt: #1a1a2e;
+      --gold:    #d4a017;
+      --gold-lt: #f0c040;
+      --white:   #f5f5f5;
+      --gray:    #6b7280;
+      --radius:  8px;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    /* ── Navigation ───────────────────────────────────────────── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(10, 10, 10, 0.97);
+      border-bottom: 2px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+      height: 64px;
+    }
+    .logo {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.03em;
+      white-space: nowrap;
+    }
+    nav ul {
+      display: flex;
+      gap: 0.25rem;
+      list-style: none;
+    }
+    nav a {
+      display: block;
+      padding: 0.45rem 0.9rem;
+      border-radius: var(--radius);
+      font-size: 0.92rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      transition: background 0.2s, color 0.2s;
+    }
+    nav a:hover, nav a.active {
+      background: var(--gold);
+      color: var(--black);
+    }
+    .nav-cta {
+      background: var(--gold);
+      color: var(--black) !important;
+      padding: 0.45rem 1.1rem !important;
+    }
+    .nav-cta:hover { background: var(--gold-lt) !important; }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 26px;
+      height: 3px;
+      background: var(--gold);
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+    .nav-open .hamburger span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .nav-open .hamburger span:nth-child(2) { opacity: 0; }
+    .nav-open .hamburger span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    /* ── Hero ─────────────────────────────────────────────────── */
+    .hero {
+      min-height: 92vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 4rem 1.5rem;
+      background:
+        linear-gradient(160deg, rgba(10,10,10,0.88) 0%, rgba(26,26,46,0.82) 100%),
+        repeating-linear-gradient(
+          135deg,
+          rgba(212,160,23,0.04) 0px,
+          rgba(212,160,23,0.04) 2px,
+          transparent 2px,
+          transparent 40px
+        );
+    }
+    .hero-badge {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--black);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.35rem 1rem;
+      border-radius: 999px;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-size: clamp(2.2rem, 6vw, 4.5rem);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+    .hero h1 span { color: var(--gold); }
+    .hero p {
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      color: #ccc;
+      max-width: 640px;
+      margin: 0 auto 2.5rem;
+    }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+
+    /* ── Buttons ──────────────────────────────────────────────── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 2rem;
+      border-radius: var(--radius);
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.1s;
+      text-decoration: none;
+    }
+    .btn:active { transform: scale(0.97); }
+    .btn-primary {
+      background: var(--gold);
+      color: var(--black);
+      border-color: var(--gold);
+    }
+    .btn-primary:hover { background: var(--gold-lt); border-color: var(--gold-lt); }
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border-color: var(--white);
+    }
+    .btn-outline:hover { background: var(--white); color: var(--black); }
+    .btn-lg { padding: 1rem 2.4rem; font-size: 1.1rem; }
+
+    /* ── Section Shared ───────────────────────────────────────── */
+    section { padding: 5rem 1.5rem; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .section-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+    h2 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    h2 span { color: var(--gold); }
+    .section-intro { color: #aaa; max-width: 600px; margin-bottom: 3rem; }
+
+    /* ── Trust Bar ────────────────────────────────────────────── */
+    .trust-bar {
+      background: var(--asphalt);
+      border-top: 1px solid #222;
+      border-bottom: 1px solid #222;
+      padding: 2rem 1.5rem;
+    }
+    .trust-bar .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+      justify-content: center;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #ccc;
+    }
+    .trust-item .icon { font-size: 1.4rem; }
+
+    /* ── Services Grid ────────────────────────────────────────── */
+    .services-section { background: #111; }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 1.5rem;
+    }
+    .service-card {
+      background: var(--asphalt);
+      border: 1px solid #2a2a3e;
+      border-radius: var(--radius);
+      padding: 2rem 1.75rem;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .service-card:hover { border-color: var(--gold); transform: translateY(-4px); }
+    .service-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+    .service-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.6rem; }
+    .service-card p { color: #aaa; font-size: 0.92rem; }
+
+    /* ── Stats ────────────────────────────────────────────────── */
+    .stats-section { background: var(--gold); color: var(--black); }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 2rem;
+      text-align: center;
+    }
+    .stat-number { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 900; line-height: 1; }
+    .stat-label { font-size: 0.9rem; font-weight: 600; margin-top: 0.4rem; opacity: 0.8; }
+
+    /* ── Social Proof ─────────────────────────────────────────── */
+    .proof-section { background: #111; }
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .proof-card {
+      background: var(--asphalt);
+      border: 1px solid #2a2a3e;
+      border-radius: var(--radius);
+      padding: 1.75rem;
+    }
+    .proof-card .stars { color: var(--gold); font-size: 1.1rem; margin-bottom: 0.75rem; }
+    .proof-card blockquote { color: #ccc; font-size: 0.95rem; font-style: italic; margin-bottom: 1rem; }
+    .proof-card cite { font-size: 0.85rem; font-weight: 700; color: var(--gold); font-style: normal; }
+
+    /* ── CTA Banner ───────────────────────────────────────────── */
+    .cta-section {
+      background: var(--asphalt);
+      border-top: 2px solid var(--gold);
+      text-align: center;
+    }
+    .cta-section h2 { margin-bottom: 0.5rem; }
+    .cta-section p { color: #aaa; margin-bottom: 2rem; }
+    .phone-display {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 900;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.02em;
+    }
+    .phone-display a { color: inherit; }
+    .phone-display a:hover { color: var(--gold-lt); }
+
+    /* ── Footer ───────────────────────────────────────────────── */
+    footer {
+      background: var(--black);
+      border-top: 1px solid #222;
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      color: var(--gray);
+      font-size: 0.85rem;
+    }
+    footer a { color: var(--gold); }
+    footer a:hover { color: var(--gold-lt); }
+    .footer-links { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1rem; }
+
+    /* ── Responsive ───────────────────────────────────────────── */
+    @media (max-width: 700px) {
+      header { padding: 0 1rem; }
+      .hamburger { display: flex; }
+      nav {
+        display: none;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: rgba(10,10,10,0.98);
+        padding: 1rem;
+        border-bottom: 2px solid var(--gold);
+      }
+      .nav-open nav { display: block; }
+      nav ul { flex-direction: column; gap: 0.25rem; }
+      nav a { padding: 0.75rem 1rem; }
+    }
+  </style>
+
+  <!-- Schema Markup for Local Business -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "J. Worden & Sons Asphalt Paving",
+    "telephone": "+18044461296",
+    "description": "4th-generation asphalt paving contractor serving Richmond and Chester, VA since 1984.",
+    "foundingDate": "1984",
+    "areaServed": ["Richmond, VA", "Chester, VA", "Chesterfield County, VA"],
+    "url": "https://jworden.netlify.app",
+    "sameAs": ["https://www.houzz.com"],
+    "priceRange": "$$"
+  }
+  </script>
+</head>
+<body>
+
+<!-- ── HEADER / NAV ────────────────────────────────────────────── -->
+<header id="site-header">
+  <div class="logo">⬛ J. Worden &amp; Sons</div>
+  <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <nav id="main-nav" aria-label="Main navigation">
+    <ul>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="contact.html" class="nav-cta">Get an Estimate</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ── HERO ───────────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-badge">4th Generation · Since 1984</div>
+  <h1>Richmond's <span>Trusted</span><br>Paving Experts</h1>
+  <p>
+    J. Worden &amp; Sons delivers commercial-grade asphalt paving for driveways,
+    parking lots, and large-scale projects — backed by 40+ years of family
+    craftsmanship and vetted by national restaurant chains.
+  </p>
+  <div class="hero-actions">
+    <a href="contact.html" class="btn btn-primary btn-lg">📋 Request a Free Estimate</a>
+    <a href="tel:8044461296" class="btn btn-outline btn-lg">📞 Call 804-446-1296</a>
+  </div>
+</section>
+
+<!-- ── TRUST BAR ───────────────────────────────────────────────── -->
+<div class="trust-bar">
+  <div class="container">
+    <div class="trust-item"><span class="icon">🏆</span> 4× Best of Houzz Award Winner</div>
+    <div class="trust-item"><span class="icon">🍗</span> Vetted by KFC &amp; National Chains</div>
+    <div class="trust-item"><span class="icon">📅</span> Family Owned Since 1984</div>
+    <div class="trust-item"><span class="icon">🛡️</span> Licensed &amp; Insured</div>
+    <div class="trust-item"><span class="icon">⭐</span> 5-Star Rated on Google &amp; Houzz</div>
+  </div>
+</div>
+
+<!-- ── SERVICES ────────────────────────────────────────────────── -->
+<section class="services-section" id="services">
+  <div class="container">
+    <span class="section-tag">What We Do</span>
+    <h2>Full-Service <span>Paving Solutions</span></h2>
+    <p class="section-intro">
+      From single-car driveways to multi-acre commercial lots, we handle every
+      phase of the project with precision and durability.
+    </p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🏠</div>
+        <h3>Residential Driveways</h3>
+        <p>New installations, resurfacing, and full-depth reclamation for homeowners who want a clean, lasting finish.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🏢</div>
+        <h3>Commercial Parking Lots</h3>
+        <p>High-volume surfaces engineered for heavy traffic — trusted by national restaurant and retail chains.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔧</div>
+        <h3>Repairs &amp; Patching</h3>
+        <p>Pothole repair, crack sealing, and full-section replacement to extend pavement life and reduce liability.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">💧</div>
+        <h3>Sealcoating</h3>
+        <p>Protective coal-tar or asphalt emulsion sealer that locks out water, UV rays, and petroleum spills.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📐</div>
+        <h3>Grading &amp; Base Prep</h3>
+        <p>Proper sub-base grading is the foundation of every long-lasting pavement. We do it right the first time.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🏘️</div>
+        <h3>HOA &amp; Community Roads</h3>
+        <p>Coordinating large residential communities and subdivision road projects from site plan to final roll.</p>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:2.5rem;">
+      <a href="contact.html" class="btn btn-primary">📋 Request Your Free Estimate</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── STATS ───────────────────────────────────────────────────── -->
+<section class="stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      <div>
+        <div class="stat-number">40+</div>
+        <div class="stat-label">Years in Business</div>
+      </div>
+      <div>
+        <div class="stat-number">4</div>
+        <div class="stat-label">Generations of Family Ownership</div>
+      </div>
+      <div>
+        <div class="stat-number">4×</div>
+        <div class="stat-label">Best of Houzz Award</div>
+      </div>
+      <div>
+        <div class="stat-number">$5M+</div>
+        <div class="stat-label">Project Capacity</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SOCIAL PROOF ────────────────────────────────────────────── -->
+<section class="proof-section">
+  <div class="container">
+    <span class="section-tag">Client Reviews</span>
+    <h2>What Our <span>Customers Say</span></h2>
+    <div class="proof-grid">
+      <div class="proof-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"J. Worden &amp; Sons repaved our entire community entrance road. On time, on budget, and the finish is flawless. The fourth-generation experience really shows."</blockquote>
+        <cite>— Maidstone Village HOA, Chester VA</cite>
+      </div>
+      <div class="proof-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"We've used them for three KFC locations. Fast mobilization, clean edges, and they understand high-traffic commercial requirements."</blockquote>
+        <cite>— Regional Franchise Operator, Richmond VA</cite>
+      </div>
+      <div class="proof-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Our driveway looks brand new. They finished in one day, cleaned up everything, and the price was fair. Will definitely call again."</blockquote>
+        <cite>— Homeowner, Chesterfield County VA</cite>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:2rem;">
+      <a href="portfolio.html" class="btn btn-outline">🖼️ View Our Portfolio</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA BANNER ──────────────────────────────────────────────── -->
+<section class="cta-section">
+  <div class="container">
+    <span class="section-tag">Ready to Start?</span>
+    <h2>Get a <span>Free Estimate</span> Today</h2>
+    <p>We respond within one business day. No obligation, no pressure.</p>
+    <div class="phone-display"><a href="tel:8044461296">804-446-1296</a></div>
+    <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+      <a href="contact.html" class="btn btn-primary btn-lg">📋 Online Estimate Form</a>
+      <a href="tel:8044461296" class="btn btn-outline btn-lg">📞 Call Us Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ──────────────────────────────────────────────────── -->
+<footer>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="index.html#services">Services</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contact.html">Contact / Estimate</a>
+  </div>
+  <p>
+    <strong style="color:var(--gold)">J. Worden &amp; Sons Asphalt Paving</strong> &mdash;
+    Richmond &amp; Chester, VA &mdash;
+    <a href="tel:8044461296">804-446-1296</a>
+  </p>
+  <p style="margin-top:0.5rem">&copy; <span id="yr"></span> J. Worden &amp; Sons. All rights reserved. Licensed &amp; Insured.</p>
+</footer>
+
+<script>
+  // Year
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // Hamburger menu toggle
+  const header = document.getElementById('site-header');
+  const hamburger = document.getElementById('hamburger');
+  hamburger.addEventListener('click', () => {
+    const open = header.classList.toggle('nav-open');
+    hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+
+  // Close mobile nav when a link is clicked
+  document.querySelectorAll('#main-nav a').forEach(link => {
+    link.addEventListener('click', () => {
+      header.classList.remove('nav-open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
+</body>
+</html>
