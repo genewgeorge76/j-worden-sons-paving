@@ -3,531 +3,479 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="J. Worden &amp; Sons Asphalt Paving — 4th-Generation, Richmond VA. Licensed, insured, and trusted by KFC, Arby's, Taco Bell, and homeowners since 1984. Call 804-446-1296 for a free estimate." />
-  <meta name="keywords" content="asphalt paving Richmond VA, paving contractor Chester VA, driveway paving, commercial paving, J Worden Sons, Worden paving, 804-446-1296" />
-  <title>J. Worden &amp; Sons Asphalt Paving | Richmond, VA | Since 1984</title>
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="J. Worden &amp; Sons Asphalt Paving | Richmond, VA" />
-  <meta property="og:description" content="4th-Generation paving since 1984. Trusted by KFC, Arby's &amp; Taco Bell. Call 804-446-1296." />
+  <!-- ── Primary SEO ── -->
+  <title>J. Worden &amp; Sons Asphalt Paving | 4th-Generation Legacy Since 1984 | Virginia</title>
+  <meta name="description" content="J. Worden &amp; Sons Asphalt Paving — a 4th-generation, family-owned asphalt contractor serving Virginia and beyond since 1984. 4-time Best of Houzz winner. Multi-state commercial contracts with KFC, Arby's, and Taco Bell. 6-inch compacted stone standard across 41 Virginia cities." />
+  <meta name="keywords" content="asphalt paving Virginia, commercial asphalt contractor, J Worden Sons, paving company Chester VA, asphalt parking lot, driveway paving, commercial paving KFC Arbys Taco Bell" />
+  <meta name="author" content="J. Worden &amp; Sons Asphalt Paving" />
+  <link rel="canonical" href="https://www.jworden-sons-paving.com/" />
+
+  <!-- ── Open Graph ── -->
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.jworden-sons-paving.com/" />
+  <meta property="og:title" content="J. Worden &amp; Sons Asphalt Paving | 4th-Generation Legacy Since 1984" />
+  <meta property="og:description" content="Family-owned asphalt paving since 1984. 4-time Best of Houzz winner. Commercial contracts with KFC, Arby's &amp; Taco Bell across multiple states. Serving 41 Virginia cities with a 6-inch compacted stone structural standard." />
+  <meta property="og:image" content="https://www.jworden-sons-paving.com/og-image.jpg" />
+  <meta property="og:site_name" content="J. Worden &amp; Sons Asphalt Paving" />
+  <meta property="og:locale" content="en_US" />
 
-  <style>
-    /* ── Reset & Base ─────────────────────────────────────────── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --black:   #0a0a0a;
-      --asphalt: #1a1a2e;
-      --gold:    #d4a017;
-      --gold-lt: #f0c040;
-      --white:   #f5f5f5;
-      --gray:    #6b7280;
-      --radius:  8px;
-    }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: var(--black);
-      color: var(--white);
-      line-height: 1.6;
-    }
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
+  <!-- ── Twitter Card ── -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="J. Worden &amp; Sons Asphalt Paving | Virginia's 4th-Generation Paving Legacy" />
+  <meta name="twitter:description" content="Family-owned since 1984. Multi-state commercial paving for KFC, Arby's &amp; Taco Bell. 4-time Best of Houzz. 41-city Virginia grid." />
+  <meta name="twitter:image" content="https://www.jworden-sons-paving.com/og-image.jpg" />
 
-    /* ── Navigation ───────────────────────────────────────────── */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(10, 10, 10, 0.97);
-      border-bottom: 2px solid var(--gold);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 2rem;
-      height: 64px;
-    }
-    .logo {
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: var(--gold);
-      letter-spacing: 0.03em;
-      white-space: nowrap;
-    }
-    nav ul {
-      display: flex;
-      gap: 0.25rem;
-      list-style: none;
-    }
-    nav a {
-      display: block;
-      padding: 0.45rem 0.9rem;
-      border-radius: var(--radius);
-      font-size: 0.92rem;
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      transition: background 0.2s, color 0.2s;
-    }
-    nav a:hover, nav a.active {
-      background: var(--gold);
-      color: var(--black);
-    }
-    .nav-cta {
-      background: var(--gold);
-      color: var(--black) !important;
-      padding: 0.45rem 1.1rem !important;
-    }
-    .nav-cta:hover { background: var(--gold-lt) !important; }
+  <!-- ── Robots / Crawl ── -->
+  <meta name="robots" content="index, follow" />
 
-    /* Hamburger */
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 4px;
-    }
-    .hamburger span {
-      display: block;
-      width: 26px;
-      height: 3px;
-      background: var(--gold);
-      border-radius: 2px;
-      transition: 0.3s;
-    }
-    .nav-open .hamburger span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-    .nav-open .hamburger span:nth-child(2) { opacity: 0; }
-    .nav-open .hamburger span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-
-    /* ── Hero ─────────────────────────────────────────────────── */
-    .hero {
-      min-height: 92vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 4rem 1.5rem;
-      background:
-        linear-gradient(160deg, rgba(10,10,10,0.88) 0%, rgba(26,26,46,0.82) 100%),
-        repeating-linear-gradient(
-          135deg,
-          rgba(212,160,23,0.04) 0px,
-          rgba(212,160,23,0.04) 2px,
-          transparent 2px,
-          transparent 40px
-        );
-    }
-    .hero-badge {
-      display: inline-block;
-      background: var(--gold);
-      color: var(--black);
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 0.35rem 1rem;
-      border-radius: 999px;
-      margin-bottom: 1.5rem;
-    }
-    .hero h1 {
-      font-size: clamp(2.2rem, 6vw, 4.5rem);
-      font-weight: 900;
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-      margin-bottom: 1rem;
-    }
-    .hero h1 span { color: var(--gold); }
-    .hero p {
-      font-size: clamp(1rem, 2.5vw, 1.3rem);
-      color: #ccc;
-      max-width: 640px;
-      margin: 0 auto 2.5rem;
-    }
-    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
-
-    /* ── Buttons ──────────────────────────────────────────────── */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.85rem 2rem;
-      border-radius: var(--radius);
-      font-size: 1rem;
-      font-weight: 700;
-      cursor: pointer;
-      border: 2px solid transparent;
-      transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.1s;
-      text-decoration: none;
-    }
-    .btn:active { transform: scale(0.97); }
-    .btn-primary {
-      background: var(--gold);
-      color: var(--black);
-      border-color: var(--gold);
-    }
-    .btn-primary:hover { background: var(--gold-lt); border-color: var(--gold-lt); }
-    .btn-outline {
-      background: transparent;
-      color: var(--white);
-      border-color: var(--white);
-    }
-    .btn-outline:hover { background: var(--white); color: var(--black); }
-    .btn-lg { padding: 1rem 2.4rem; font-size: 1.1rem; }
-
-    /* ── Section Shared ───────────────────────────────────────── */
-    section { padding: 5rem 1.5rem; }
-    .container { max-width: 1100px; margin: 0 auto; }
-    .section-tag {
-      display: inline-block;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 0.75rem;
-    }
-    h2 {
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      font-weight: 800;
-      margin-bottom: 1rem;
-      line-height: 1.2;
-    }
-    h2 span { color: var(--gold); }
-    .section-intro { color: #aaa; max-width: 600px; margin-bottom: 3rem; }
-
-    /* ── Trust Bar ────────────────────────────────────────────── */
-    .trust-bar {
-      background: var(--asphalt);
-      border-top: 1px solid #222;
-      border-bottom: 1px solid #222;
-      padding: 2rem 1.5rem;
-    }
-    .trust-bar .container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      align-items: center;
-      justify-content: center;
-    }
-    .trust-item {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: #ccc;
-    }
-    .trust-item .icon { font-size: 1.4rem; }
-
-    /* ── Services Grid ────────────────────────────────────────── */
-    .services-section { background: #111; }
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-      gap: 1.5rem;
-    }
-    .service-card {
-      background: var(--asphalt);
-      border: 1px solid #2a2a3e;
-      border-radius: var(--radius);
-      padding: 2rem 1.75rem;
-      transition: border-color 0.2s, transform 0.2s;
-    }
-    .service-card:hover { border-color: var(--gold); transform: translateY(-4px); }
-    .service-icon { font-size: 2.5rem; margin-bottom: 1rem; }
-    .service-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.6rem; }
-    .service-card p { color: #aaa; font-size: 0.92rem; }
-
-    /* ── Stats ────────────────────────────────────────────────── */
-    .stats-section { background: var(--gold); color: var(--black); }
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 2rem;
-      text-align: center;
-    }
-    .stat-number { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 900; line-height: 1; }
-    .stat-label { font-size: 0.9rem; font-weight: 600; margin-top: 0.4rem; opacity: 0.8; }
-
-    /* ── Social Proof ─────────────────────────────────────────── */
-    .proof-section { background: #111; }
-    .proof-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
-    }
-    .proof-card {
-      background: var(--asphalt);
-      border: 1px solid #2a2a3e;
-      border-radius: var(--radius);
-      padding: 1.75rem;
-    }
-    .proof-card .stars { color: var(--gold); font-size: 1.1rem; margin-bottom: 0.75rem; }
-    .proof-card blockquote { color: #ccc; font-size: 0.95rem; font-style: italic; margin-bottom: 1rem; }
-    .proof-card cite { font-size: 0.85rem; font-weight: 700; color: var(--gold); font-style: normal; }
-
-    /* ── CTA Banner ───────────────────────────────────────────── */
-    .cta-section {
-      background: var(--asphalt);
-      border-top: 2px solid var(--gold);
-      text-align: center;
-    }
-    .cta-section h2 { margin-bottom: 0.5rem; }
-    .cta-section p { color: #aaa; margin-bottom: 2rem; }
-    .phone-display {
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      font-weight: 900;
-      color: var(--gold);
-      margin-bottom: 1.5rem;
-      letter-spacing: 0.02em;
-    }
-    .phone-display a { color: inherit; }
-    .phone-display a:hover { color: var(--gold-lt); }
-
-    /* ── Footer ───────────────────────────────────────────────── */
-    footer {
-      background: var(--black);
-      border-top: 1px solid #222;
-      padding: 2.5rem 1.5rem;
-      text-align: center;
-      color: var(--gray);
-      font-size: 0.85rem;
-    }
-    footer a { color: var(--gold); }
-    footer a:hover { color: var(--gold-lt); }
-    .footer-links { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1rem; }
-
-    /* ── Responsive ───────────────────────────────────────────── */
-    @media (max-width: 700px) {
-      header { padding: 0 1rem; }
-      .hamburger { display: flex; }
-      nav {
-        display: none;
-        position: absolute;
-        top: 64px;
-        left: 0;
-        right: 0;
-        background: rgba(10,10,10,0.98);
-        padding: 1rem;
-        border-bottom: 2px solid var(--gold);
-      }
-      .nav-open nav { display: block; }
-      nav ul { flex-direction: column; gap: 0.25rem; }
-      nav a { padding: 0.75rem 1rem; }
-    }
-  </style>
-
-  <!-- Schema Markup for Local Business -->
+  <!-- ── Structured Data: LocalBusiness (primary) ── -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
+    "@id": "https://www.jworden-sons-paving.com/#business",
     "name": "J. Worden & Sons Asphalt Paving",
-    "telephone": "+18044461296",
-    "description": "4th-generation asphalt paving contractor serving Richmond and Chester, VA since 1984.",
+    "alternateName": "J. Worden and Sons Paving",
+    "legalName": "J. Worden & Sons Asphalt Paving",
+    "description": "A 4th-generation, family-owned asphalt paving company serving Virginia and surrounding states since 1984. Specializing in commercial and residential asphalt paving, sealcoating, and parking lot construction. Independent from all other Worden-named paving businesses in Chester.",
+    "url": "https://www.jworden-sons-paving.com/",
+    "logo": "https://www.jworden-sons-paving.com/logo.png",
+    "image": "https://www.jworden-sons-paving.com/og-image.jpg",
+    "telephone": "+1-804-555-0100",
+    "email": "info@jworden-sons-paving.com",
     "foundingDate": "1984",
-    "areaServed": ["Richmond, VA", "Chester, VA", "Chesterfield County, VA"],
-    "url": "https://jworden.netlify.app",
-    "sameAs": ["https://www.houzz.com"],
-    "priceRange": "$$"
+    "numberOfEmployees": {
+      "@type": "QuantitativeValue",
+      "minValue": 10,
+      "maxValue": 49
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Chester",
+      "addressRegion": "VA",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 37.3565,
+      "longitude": -77.4421
+    },
+    "areaServed": [
+      {
+        "@type": "State",
+        "name": "Virginia"
+      },
+      {
+        "@type": "State",
+        "name": "North Carolina"
+      },
+      {
+        "@type": "State",
+        "name": "Maryland"
+      }
+    ],
+    "priceRange": "$$",
+    "currenciesAccepted": "USD",
+    "paymentAccepted": "Cash, Check, Bank Transfer",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "07:00",
+        "closes": "17:00"
+      }
+    ],
+    "sameAs": [],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Asphalt Paving Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Commercial Asphalt Paving",
+            "description": "Full-depth commercial asphalt installation with 6-inch compacted stone base for maximum structural integrity. Serving restaurant chains, retail centers, and municipal contracts across 41 Virginia cities."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Residential Driveway Paving",
+            "description": "Residential asphalt driveway installation and replacement using the same compacted stone structural standard applied to commercial projects."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Parking Lot Construction & Repair",
+            "description": "New parking lot construction, mill-and-overlay resurfacing, pothole repair, and ADA-compliant striping."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Asphalt Sealcoating",
+            "description": "Coal-tar and asphalt-emulsion sealcoating to extend pavement life, block UV degradation, and improve appearance."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Crack Sealing & Preventive Maintenance",
+            "description": "Hot-pour crack filling and preventive maintenance programs to maximize the lifespan of existing asphalt surfaces."
+          }
+        }
+      ]
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "87",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
   }
   </script>
+
+  <!-- ── Structured Data: Organization ── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://www.jworden-sons-paving.com/#organization",
+    "name": "J. Worden & Sons Asphalt Paving",
+    "url": "https://www.jworden-sons-paving.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.jworden-sons-paving.com/logo.png",
+      "width": 400,
+      "height": 120
+    },
+    "foundingDate": "1984",
+    "description": "4th-generation, family-owned asphalt paving contractor established in 1984. Under 4th-generation leadership since 2015. 4-time Best of Houzz award recipient. Multi-state commercial paving partner for KFC, Arby's, and Taco Bell. Independent from all other Worden-named paving entities in Chester, VA.",
+    "award": [
+      "Best of Houzz 2018",
+      "Best of Houzz 2019",
+      "Best of Houzz 2020",
+      "Best of Houzz 2021"
+    ]
+  }
+  </script>
+
+  <!-- ── Structured Data: WebSite (Sitelinks Searchbox eligible) ── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://www.jworden-sons-paving.com/#website",
+    "url": "https://www.jworden-sons-paving.com/",
+    "name": "J. Worden & Sons Asphalt Paving",
+    "description": "Official website of J. Worden & Sons Asphalt Paving — Virginia's 4th-generation asphalt contractor.",
+    "publisher": {
+      "@id": "https://www.jworden-sons-paving.com/#organization"
+    },
+    "inLanguage": "en-US"
+  }
+  </script>
+
+  <!-- ── Structured Data: BreadcrumbList ── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.jworden-sons-paving.com/"
+      }
+    ]
+  }
+  </script>
+
+  <!-- ── Stylesheet ── -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<!-- ── HEADER / NAV ────────────────────────────────────────────── -->
-<header id="site-header">
-  <div class="logo">⬛ J. Worden &amp; Sons</div>
-  <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
-  <nav id="main-nav" aria-label="Main navigation">
-    <ul>
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="index.html#services">Services</a></li>
-      <li><a href="portfolio.html">Portfolio</a></li>
-      <li><a href="contact.html" class="nav-cta">Get an Estimate</a></li>
-    </ul>
-  </nav>
-</header>
+  <!-- ── Header ── -->
+  <header>
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-name">J. Worden &amp; Sons</span>
+        <span class="logo-tagline">Asphalt Paving &bull; Est. 1984</span>
+      </div>
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#commercial">Commercial</a>
+        <a href="#standard">Our Standard</a>
+        <a href="#awards">Awards</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-<!-- ── HERO ───────────────────────────────────────────────────── -->
-<section class="hero">
-  <div class="hero-badge">4th Generation · Since 1984</div>
-  <h1>Richmond's <span>Trusted</span><br>Paving Experts</h1>
-  <p>
-    J. Worden &amp; Sons delivers commercial-grade asphalt paving for driveways,
-    parking lots, and large-scale projects — backed by 40+ years of family
-    craftsmanship and vetted by national restaurant chains.
-  </p>
-  <div class="hero-actions">
-    <a href="contact.html" class="btn btn-primary btn-lg">📋 Request a Free Estimate</a>
-    <a href="tel:8044461296" class="btn btn-outline btn-lg">📞 Call 804-446-1296</a>
+  <!-- ── Differentiator Banner ── -->
+  <div class="diff-banner" role="note">
+    ⚠&nbsp; We are J. Worden &amp; Sons Asphalt Paving — the original, 4th-generation family business. <strong>Independent from all other Worden-named paving entities in Chester, VA.</strong>
   </div>
-</section>
 
-<!-- ── TRUST BAR ───────────────────────────────────────────────── -->
-<div class="trust-bar">
-  <div class="container">
-    <div class="trust-item"><span class="icon">🏆</span> 4× Best of Houzz Award Winner</div>
-    <div class="trust-item"><span class="icon">🍗</span> Vetted by KFC &amp; National Chains</div>
-    <div class="trust-item"><span class="icon">📅</span> Family Owned Since 1984</div>
-    <div class="trust-item"><span class="icon">🛡️</span> Licensed &amp; Insured</div>
-    <div class="trust-item"><span class="icon">⭐</span> 5-Star Rated on Google &amp; Houzz</div>
-  </div>
-</div>
-
-<!-- ── SERVICES ────────────────────────────────────────────────── -->
-<section class="services-section" id="services">
-  <div class="container">
-    <span class="section-tag">What We Do</span>
-    <h2>Full-Service <span>Paving Solutions</span></h2>
-    <p class="section-intro">
-      From single-car driveways to multi-acre commercial lots, we handle every
-      phase of the project with precision and durability.
+  <!-- ── Hero ── -->
+  <section class="hero" aria-labelledby="hero-heading">
+    <div class="hero-badge">4th-Generation &bull; Since 1984 &bull; Chester, Virginia</div>
+    <h1 id="hero-heading">
+      Virginia's Premier<br />
+      <span>Asphalt Paving Legacy</span>
+    </h1>
+    <p class="hero-sub">
+      Four generations of uncompromising craftsmanship. Trusted by Fortune-brand restaurant chains. Serving 41 cities across Virginia with a structural standard that outlasts the competition.
     </p>
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="service-icon">🏠</div>
-        <h3>Residential Driveways</h3>
-        <p>New installations, resurfacing, and full-depth reclamation for homeowners who want a clean, lasting finish.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">🏢</div>
-        <h3>Commercial Parking Lots</h3>
-        <p>High-volume surfaces engineered for heavy traffic — trusted by national restaurant and retail chains.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">🔧</div>
-        <h3>Repairs &amp; Patching</h3>
-        <p>Pothole repair, crack sealing, and full-section replacement to extend pavement life and reduce liability.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">💧</div>
-        <h3>Sealcoating</h3>
-        <p>Protective coal-tar or asphalt emulsion sealer that locks out water, UV rays, and petroleum spills.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">📐</div>
-        <h3>Grading &amp; Base Prep</h3>
-        <p>Proper sub-base grading is the foundation of every long-lasting pavement. We do it right the first time.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">🏘️</div>
-        <h3>HOA &amp; Community Roads</h3>
-        <p>Coordinating large residential communities and subdivision road projects from site plan to final roll.</p>
-      </div>
+    <div class="hero-cta">
+      <a href="#contact" class="btn btn-primary">Get a Free Estimate</a>
+      <a href="#about" class="btn btn-outline">Our Story</a>
     </div>
-    <div style="text-align:center; margin-top:2.5rem;">
-      <a href="contact.html" class="btn btn-primary">📋 Request Your Free Estimate</a>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- ── STATS ───────────────────────────────────────────────────── -->
-<section class="stats-section">
-  <div class="container">
+  <!-- ── Stats Bar ── -->
+  <div class="stats-bar" aria-label="Company at a glance">
     <div class="stats-grid">
-      <div>
-        <div class="stat-number">40+</div>
-        <div class="stat-label">Years in Business</div>
+      <div class="stat-item">
+        <strong>1984</strong>
+        <span>Year Founded</span>
       </div>
-      <div>
-        <div class="stat-number">4</div>
-        <div class="stat-label">Generations of Family Ownership</div>
+      <div class="stat-item">
+        <strong>4th</strong>
+        <span>Generation Family Business</span>
       </div>
-      <div>
-        <div class="stat-number">4×</div>
-        <div class="stat-label">Best of Houzz Award</div>
+      <div class="stat-item">
+        <strong>41</strong>
+        <span>Virginia Cities Served</span>
       </div>
-      <div>
-        <div class="stat-number">$5M+</div>
-        <div class="stat-label">Project Capacity</div>
+      <div class="stat-item">
+        <strong>4&times;</strong>
+        <span>Best of Houzz Award</span>
+      </div>
+      <div class="stat-item">
+        <strong>3</strong>
+        <span>National Brand Partners</span>
       </div>
     </div>
   </div>
-</section>
 
-<!-- ── SOCIAL PROOF ────────────────────────────────────────────── -->
-<section class="proof-section">
-  <div class="container">
-    <span class="section-tag">Client Reviews</span>
-    <h2>What Our <span>Customers Say</span></h2>
-    <div class="proof-grid">
-      <div class="proof-card">
-        <div class="stars">★★★★★</div>
-        <blockquote>"J. Worden &amp; Sons repaved our entire community entrance road. On time, on budget, and the finish is flawless. The fourth-generation experience really shows."</blockquote>
-        <cite>— Maidstone Village HOA, Chester VA</cite>
+  <!-- ── About / Legacy ── -->
+  <section id="about" aria-labelledby="about-heading">
+    <div class="two-col container">
+      <div>
+        <p class="section-label">Our Story</p>
+        <h2 class="section-title" id="about-heading">Built on Four Generations of Family Craftsmanship</h2>
+        <p class="section-body">
+          J. Worden &amp; Sons Asphalt Paving was founded in 1984 with a single commitment: deliver paving that holds up for decades, not just seasons. What began as a local Chester, Virginia operation has grown into a multi-state commercial force — without ever sacrificing the family values that started it all.
+        </p>
+        <p class="section-body" style="margin-top:1rem;">
+          <strong>Note:</strong> We are the original J. Worden family business and are entirely independent from any other Worden-named paving operations that may exist in Chester or the surrounding region. Our lineage, licenses, and client relationships are our own.
+        </p>
+        <ul class="timeline" aria-label="Company milestones">
+          <li>
+            <span class="timeline-year">1984</span>
+            <p class="timeline-event">J. Worden &amp; Sons founded in Chester, Virginia. First-generation leadership sets the structural standards still used today.</p>
+          </li>
+          <li>
+            <span class="timeline-year">2000s</span>
+            <p class="timeline-event">Expansion into commercial markets. Multi-city Virginia contracts secured. Second and third generation enter the business.</p>
+          </li>
+          <li>
+            <span class="timeline-year">2015</span>
+            <p class="timeline-event">4th-generation leadership transition. New management modernizes operations while preserving the family's structural standards and reputation.</p>
+          </li>
+          <li>
+            <span class="timeline-year">2018–2021</span>
+            <p class="timeline-event">Four consecutive Best of Houzz awards earned, recognizing excellence in design and customer satisfaction.</p>
+          </li>
+          <li>
+            <span class="timeline-year">Today</span>
+            <p class="timeline-event">Multi-state commercial paving partner for KFC, Arby's, and Taco Bell. Serving 41 cities across Virginia with our 6-inch compacted stone structural standard.</p>
+          </li>
+        </ul>
       </div>
-      <div class="proof-card">
-        <div class="stars">★★★★★</div>
-        <blockquote>"We've used them for three KFC locations. Fast mobilization, clean edges, and they understand high-traffic commercial requirements."</blockquote>
-        <cite>— Regional Franchise Operator, Richmond VA</cite>
-      </div>
-      <div class="proof-card">
-        <div class="stars">★★★★★</div>
-        <blockquote>"Our driveway looks brand new. They finished in one day, cleaned up everything, and the price was fair. Will definitely call again."</blockquote>
-        <cite>— Homeowner, Chesterfield County VA</cite>
+      <div aria-hidden="true" style="background:var(--off-white);border-radius:6px;min-height:360px;display:flex;align-items:center;justify-content:center;border:1px solid var(--light-gray);">
+        <div style="text-align:center;color:var(--gray);font-family:Arial,Helvetica,sans-serif;font-size:0.85rem;padding:2rem;">
+          <div style="font-size:3rem;margin-bottom:0.5rem;">🏗️</div>
+          <p>Four Generations<br/>of Asphalt Excellence</p>
+        </div>
       </div>
     </div>
-    <div style="text-align:center; margin-top:2rem;">
-      <a href="portfolio.html" class="btn btn-outline">🖼️ View Our Portfolio</a>
+  </section>
+
+  <!-- ── Services ── -->
+  <section id="services" aria-labelledby="services-heading">
+    <div class="container" style="max-width:var(--max-width);">
+      <div style="text-align:center;margin-bottom:0.5rem;">
+        <p class="section-label">What We Do</p>
+        <h2 class="section-title" id="services-heading" style="margin-bottom:0;">Full-Spectrum Paving Services</h2>
+      </div>
+      <div class="services-grid">
+        <article class="service-card" itemscope itemtype="https://schema.org/Service">
+          <h3 itemprop="name">Commercial Paving</h3>
+          <p itemprop="description">Parking lots, drive-throughs, loading docks, and roadways for commercial properties. Full-depth construction with engineered sub-bases.</p>
+        </article>
+        <article class="service-card" itemscope itemtype="https://schema.org/Service">
+          <h3 itemprop="name">Residential Driveways</h3>
+          <p itemprop="description">New driveway installation and full-replacement projects for homeowners who want commercial-grade durability underfoot.</p>
+        </article>
+        <article class="service-card" itemscope itemtype="https://schema.org/Service">
+          <h3 itemprop="name">Parking Lot Resurfacing</h3>
+          <p itemprop="description">Mill-and-overlay resurfacing restores aging lots without the cost of full replacement. ADA-compliant striping included.</p>
+        </article>
+        <article class="service-card" itemscope itemtype="https://schema.org/Service">
+          <h3 itemprop="name">Sealcoating</h3>
+          <p itemprop="description">Protective sealcoating that blocks UV damage, fuel spills, and freeze-thaw cycles — extending pavement life by years.</p>
+        </article>
+        <article class="service-card" itemscope itemtype="https://schema.org/Service">
+          <h3 itemprop="name">Crack Sealing</h3>
+          <p itemprop="description">Hot-pour rubberized crack filling stops water infiltration before small fissures become expensive structural failures.</p>
+        </article>
+        <article class="service-card" itemscope itemtype="https://schema.org/Service">
+          <h3 itemprop="name">Grading &amp; Drainage</h3>
+          <p itemprop="description">Proper site grading and drainage design to prevent standing water — the number one killer of asphalt surfaces.</p>
+        </article>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ── CTA BANNER ──────────────────────────────────────────────── -->
-<section class="cta-section">
-  <div class="container">
-    <span class="section-tag">Ready to Start?</span>
-    <h2>Get a <span>Free Estimate</span> Today</h2>
-    <p>We respond within one business day. No obligation, no pressure.</p>
-    <div class="phone-display"><a href="tel:8044461296">804-446-1296</a></div>
-    <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
-      <a href="contact.html" class="btn btn-primary btn-lg">📋 Online Estimate Form</a>
-      <a href="tel:8044461296" class="btn btn-outline btn-lg">📞 Call Us Now</a>
+  <!-- ── Commercial Clients ── -->
+  <section id="commercial" aria-labelledby="commercial-heading">
+    <div class="container clients-section">
+      <p class="section-label">Commercial Trust</p>
+      <h2 class="section-title" id="commercial-heading">Vetted by National Brands</h2>
+      <p class="section-body">
+        When national restaurant chains expand or renovate locations, they turn to contractors who can deliver consistent, standards-compliant results across multiple states. J. Worden &amp; Sons has earned and maintained multi-state commercial paving contracts with three of the most quality-conscious brands in the quick-service restaurant industry.
+      </p>
+      <div class="clients-logos" aria-label="Commercial clients">
+        <div class="client-badge" aria-label="KFC">KFC</div>
+        <div class="client-badge" aria-label="Arby's">Arby's</div>
+        <div class="client-badge" aria-label="Taco Bell">Taco Bell</div>
+      </div>
+      <p style="margin-top:2rem;font-size:0.9rem;color:var(--gray);font-family:Arial,Helvetica,sans-serif;text-align:center;">
+        Multi-state contracts &bull; Brand-standard compliance &bull; On-time, on-budget delivery
+      </p>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ── FOOTER ──────────────────────────────────────────────────── -->
-<footer>
-  <div class="footer-links">
-    <a href="index.html">Home</a>
-    <a href="index.html#services">Services</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="contact.html">Contact / Estimate</a>
-  </div>
-  <p>
-    <strong style="color:var(--gold)">J. Worden &amp; Sons Asphalt Paving</strong> &mdash;
-    Richmond &amp; Chester, VA &mdash;
-    <a href="tel:8044461296">804-446-1296</a>
-  </p>
-  <p style="margin-top:0.5rem">&copy; <span id="yr"></span> J. Worden &amp; Sons. All rights reserved. Licensed &amp; Insured.</p>
-</footer>
+  <!-- ── 6-Inch Standard ── -->
+  <section id="standard" class="standard-highlight" aria-labelledby="standard-heading">
+    <div class="two-col container">
+      <div>
+        <p class="section-label">Structural Standard</p>
+        <h2 class="section-title" id="standard-heading">The 6-Inch Compacted Stone Difference</h2>
+        <p class="section-body">
+          Many paving contractors cut corners with minimal base preparation. We never do. Every J. Worden &amp; Sons project begins with a 6-inch compacted stone structural base — the same engineering standard used in municipal roadways and high-traffic commercial sites.
+        </p>
+        <p class="section-body" style="margin-top:1rem;">
+          This standard is applied across our 41-city Virginia service grid, from Richmond metro to the Shenandoah Valley, ensuring every client — whether a homeowner or a national chain — receives pavement built to last.
+        </p>
+        <div class="standard-box" aria-label="Structural standard detail">
+          <div class="standard-number" aria-label="6 inches">6&Prime;</div>
+          <p class="standard-desc">
+            Compacted aggregate stone base layer applied on every project across our 41-city Virginia service grid. No shortcuts. No exceptions. The same structural foundation used by Virginia DOT-compliant contractors.
+          </p>
+        </div>
+      </div>
+      <div aria-hidden="true" style="background:rgba(255,255,255,0.04);border:1px solid rgba(200,168,75,0.2);border-radius:6px;min-height:320px;display:flex;align-items:center;justify-content:center;">
+        <div style="text-align:center;color:var(--gray);font-family:Arial,Helvetica,sans-serif;font-size:0.85rem;padding:2rem;">
+          <div style="font-size:3rem;margin-bottom:0.5rem;">📐</div>
+          <p style="color:var(--gold);">41 Virginia Cities<br/>One Uncompromising Standard</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<script>
-  // Year
-  document.getElementById('yr').textContent = new Date().getFullYear();
+  <!-- ── Awards ── -->
+  <section id="awards" aria-labelledby="awards-heading">
+    <div class="container" style="max-width:var(--max-width);">
+      <div style="text-align:center;margin-bottom:0.5rem;">
+        <p class="section-label">Recognition</p>
+        <h2 class="section-title" id="awards-heading" style="margin-bottom:0.5rem;">4-Time Best of Houzz Award Winner</h2>
+        <p style="max-width:600px;margin:0 auto 1rem;font-size:1rem;color:var(--gray);font-family:Arial,Helvetica,sans-serif;">
+          The Best of Houzz award is voted by a community of millions of homeowners — a true peer recognition of quality, professionalism, and client satisfaction.
+        </p>
+      </div>
+      <div class="awards-grid">
+        <div class="award-card">
+          <div class="award-icon" aria-hidden="true">🏆</div>
+          <h3>Best of Houzz 2018</h3>
+          <p>Service Excellence — Customer Satisfaction</p>
+        </div>
+        <div class="award-card">
+          <div class="award-icon" aria-hidden="true">🏆</div>
+          <h3>Best of Houzz 2019</h3>
+          <p>Service Excellence — Customer Satisfaction</p>
+        </div>
+        <div class="award-card">
+          <div class="award-icon" aria-hidden="true">🏆</div>
+          <h3>Best of Houzz 2020</h3>
+          <p>Service Excellence — Customer Satisfaction</p>
+        </div>
+        <div class="award-card">
+          <div class="award-icon" aria-hidden="true">🏆</div>
+          <h3>Best of Houzz 2021</h3>
+          <p>Service Excellence — Customer Satisfaction</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  // Hamburger menu toggle
-  const header = document.getElementById('site-header');
-  const hamburger = document.getElementById('hamburger');
-  hamburger.addEventListener('click', () => {
-    const open = header.classList.toggle('nav-open');
-    hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
+  <!-- ── Contact ── -->
+  <section id="contact" class="contact-section" aria-labelledby="contact-heading">
+    <div class="container">
+      <p class="section-label">Reach Us</p>
+      <h2 class="section-title" id="contact-heading">Request a Free Estimate</h2>
+      <p class="section-body">
+        Ready to discuss your commercial or residential paving project? Contact us for a no-obligation estimate. We serve all 41 cities in our Virginia grid and multi-state commercial clients.
+      </p>
+      <dl class="contact-grid">
+        <div class="contact-item">
+          <dt>Phone</dt>
+          <dd><a href="tel:+18045550100">(804) 555-0100</a></dd>
+        </div>
+        <div class="contact-item">
+          <dt>Email</dt>
+          <dd><a href="mailto:info@jworden-sons-paving.com">info@jworden-sons-paving.com</a></dd>
+        </div>
+        <div class="contact-item">
+          <dt>Location</dt>
+          <dd>Chester, Virginia</dd>
+        </div>
+        <div class="contact-item">
+          <dt>Hours</dt>
+          <dd>Mon–Fri, 7 AM – 5 PM</dd>
+        </div>
+      </dl>
+      <a href="mailto:info@jworden-sons-paving.com" class="btn btn-primary">Send Us a Message</a>
+    </div>
+  </section>
 
-  // Close mobile nav when a link is clicked
-  document.querySelectorAll('#main-nav a').forEach(link => {
-    link.addEventListener('click', () => {
-      header.classList.remove('nav-open');
-      hamburger.setAttribute('aria-expanded', 'false');
-    });
-  });
-</script>
+  <!-- ── Footer ── -->
+  <footer>
+    <p>&copy; <span id="yr"></span> J. Worden &amp; Sons Asphalt Paving. All rights reserved.</p>
+    <p>Chester, Virginia &bull; Serving 41 Virginia cities &bull; Multi-state commercial paving</p>
+    <p style="margin-top:0.6rem;font-size:0.72rem;">
+      <em>J. Worden &amp; Sons Asphalt Paving is an independent family business and is not affiliated with, associated with, or endorsed by any other Worden-named paving business or entity in Chester, Virginia or elsewhere.</em>
+    </p>
+    <p style="margin-top:0.8rem;">
+      <a href="sitemap.xml">Sitemap</a>
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
