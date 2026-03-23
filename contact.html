@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Request a free asphalt paving estimate from J. Worden &amp; Sons — Richmond &amp; Chester, VA. Call 804-446-1296 or fill out the quick online form." />
+  <title>Request an Estimate | J. Worden &amp; Sons Asphalt Paving</title>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black:   #0a0a0a;
+      --asphalt: #1a1a2e;
+      --gold:    #d4a017;
+      --gold-lt: #f0c040;
+      --white:   #f5f5f5;
+      --gray:    #6b7280;
+      --radius:  8px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: var(--black); color: var(--white); line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ── Nav (shared) ─────────────────────────────────────────── */
+    header {
+      position: sticky; top: 0; z-index: 1000;
+      background: rgba(10,10,10,0.97); border-bottom: 2px solid var(--gold);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2rem; height: 64px;
+    }
+    .logo { font-size: 1.15rem; font-weight: 700; color: var(--gold); letter-spacing: 0.03em; white-space: nowrap; }
+    nav ul { display: flex; gap: 0.25rem; list-style: none; }
+    nav a { display: block; padding: 0.45rem 0.9rem; border-radius: var(--radius); font-size: 0.92rem; font-weight: 600; letter-spacing: 0.02em; transition: background 0.2s, color 0.2s; }
+    nav a:hover, nav a.active { background: var(--gold); color: var(--black); }
+    .nav-cta { background: var(--gold); color: var(--black) !important; padding: 0.45rem 1.1rem !important; }
+    .nav-cta:hover { background: var(--gold-lt) !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 26px; height: 3px; background: var(--gold); border-radius: 2px; transition: 0.3s; }
+    .nav-open .hamburger span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .nav-open .hamburger span:nth-child(2) { opacity: 0; }
+    .nav-open .hamburger span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    /* ── Page Hero ────────────────────────────────────────────── */
+    .page-hero {
+      background: linear-gradient(160deg, rgba(10,10,10,0.9) 0%, rgba(26,26,46,0.85) 100%),
+        repeating-linear-gradient(135deg, rgba(212,160,23,0.04) 0px, rgba(212,160,23,0.04) 2px, transparent 2px, transparent 40px);
+      padding: 5rem 1.5rem 3rem;
+      text-align: center;
+    }
+    .section-tag { display: inline-block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+    h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 1rem; }
+    h1 span { color: var(--gold); }
+    .page-hero p { color: #aaa; font-size: 1.05rem; max-width: 560px; margin: 0 auto; }
+
+    /* ── Layout ───────────────────────────────────────────────── */
+    .contact-section { padding: 4rem 1.5rem; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+
+    /* ── Contact Info Panel ───────────────────────────────────── */
+    .contact-info h2 { font-size: 1.6rem; font-weight: 800; margin-bottom: 1.5rem; }
+    h2 span { color: var(--gold); }
+    .contact-method {
+      display: flex; gap: 1rem; align-items: flex-start;
+      background: var(--asphalt); border: 1px solid #2a2a3e;
+      border-radius: var(--radius); padding: 1.25rem; margin-bottom: 1rem;
+      transition: border-color 0.2s;
+    }
+    .contact-method:hover { border-color: var(--gold); }
+    .contact-method .icon { font-size: 1.8rem; flex-shrink: 0; }
+    .contact-method h3 { font-size: 0.9rem; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.25rem; }
+    .contact-method p { color: #ccc; font-size: 0.95rem; }
+    .contact-method a { color: var(--white); font-weight: 700; }
+    .contact-method a:hover { color: var(--gold); }
+    .service-area { margin-top: 2rem; padding: 1.25rem; background: var(--asphalt); border: 1px solid #2a2a3e; border-radius: var(--radius); }
+    .service-area h3 { color: var(--gold); font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem; }
+    .service-area ul { list-style: none; color: #ccc; font-size: 0.92rem; }
+    .service-area li::before { content: "📍 "; }
+
+    /* ── Estimate Form ────────────────────────────────────────── */
+    .estimate-form-wrap { background: var(--asphalt); border: 1px solid #2a2a3e; border-radius: var(--radius); padding: 2.5rem; }
+    .estimate-form-wrap h2 { font-size: 1.5rem; font-weight: 800; margin-bottom: 1.75rem; }
+    .form-group { margin-bottom: 1.25rem; }
+    label { display: block; font-size: 0.85rem; font-weight: 700; color: #ccc; margin-bottom: 0.4rem; letter-spacing: 0.03em; }
+    label .req { color: var(--gold); }
+    input, select, textarea {
+      width: 100%; background: #111; border: 1px solid #333; border-radius: var(--radius);
+      color: var(--white); font-size: 0.95rem; padding: 0.7rem 1rem;
+      font-family: inherit; transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(212,160,23,0.18);
+    }
+    select option { background: #111; }
+    textarea { resize: vertical; min-height: 120px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .btn-submit {
+      display: inline-flex; align-items: center; gap: 0.5rem; justify-content: center;
+      width: 100%; padding: 1rem; background: var(--gold); color: var(--black);
+      font-size: 1.05rem; font-weight: 700; border: none; border-radius: var(--radius);
+      cursor: pointer; transition: background 0.2s, transform 0.1s; margin-top: 0.5rem;
+    }
+    .btn-submit:hover { background: var(--gold-lt); }
+    .btn-submit:active { transform: scale(0.98); }
+    .form-note { font-size: 0.8rem; color: var(--gray); text-align: center; margin-top: 0.75rem; }
+    .success-msg {
+      display: none; background: #14532d; border: 1px solid #16a34a;
+      border-radius: var(--radius); padding: 1rem 1.25rem; margin-top: 1rem;
+      color: #bbf7d0; font-size: 0.95rem;
+    }
+
+    /* ── Footer ───────────────────────────────────────────────── */
+    footer { background: var(--black); border-top: 1px solid #222; padding: 2.5rem 1.5rem; text-align: center; color: var(--gray); font-size: 0.85rem; }
+    footer a { color: var(--gold); }
+    footer a:hover { color: var(--gold-lt); }
+    .footer-links { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1rem; }
+
+    /* ── Responsive ───────────────────────────────────────────── */
+    @media (max-width: 800px) {
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 700px) {
+      header { padding: 0 1rem; }
+      .hamburger { display: flex; }
+      nav { display: none; position: absolute; top: 64px; left: 0; right: 0; background: rgba(10,10,10,0.98); padding: 1rem; border-bottom: 2px solid var(--gold); }
+      .nav-open nav { display: block; }
+      nav ul { flex-direction: column; gap: 0.25rem; }
+      nav a { padding: 0.75rem 1rem; }
+      .form-row { grid-template-columns: 1fr; }
+      .estimate-form-wrap { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── HEADER ─────────────────────────────────────────────────── -->
+<header id="site-header">
+  <div class="logo">⬛ J. Worden &amp; Sons</div>
+  <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <nav id="main-nav" aria-label="Main navigation">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="contact.html" class="nav-cta active">Get an Estimate</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ── PAGE HERO ──────────────────────────────────────────────── -->
+<div class="page-hero">
+  <span class="section-tag">Free &amp; No Obligation</span>
+  <h1>Request a <span>Free Estimate</span></h1>
+  <p>Tell us about your project and we'll get back to you within one business day — no pressure, no commitment.</p>
+</div>
+
+<!-- ── CONTACT SECTION ────────────────────────────────────────── -->
+<section class="contact-section">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- LEFT: Contact Info -->
+      <div class="contact-info">
+        <h2>Get in <span>Touch</span></h2>
+
+        <div class="contact-method">
+          <div class="icon">📞</div>
+          <div>
+            <h3>Call or Text</h3>
+            <p><a href="tel:8044461296">804-446-1296</a></p>
+            <p style="font-size:0.85rem; color:var(--gray); margin-top:0.25rem;">Mon–Sat &nbsp;7 AM – 6 PM</p>
+          </div>
+        </div>
+
+        <div class="contact-method">
+          <div class="icon">✉️</div>
+          <div>
+            <h3>Email Us</h3>
+            <p><a href="mailto:info@jworden.com">info@jworden.com</a></p>
+            <p style="font-size:0.85rem; color:var(--gray); margin-top:0.25rem;">We reply within one business day.</p>
+          </div>
+        </div>
+
+        <div class="contact-method">
+          <div class="icon">🏆</div>
+          <div>
+            <h3>View Our Houzz Profile</h3>
+            <p>
+              <a href="https://www.houzz.com" target="_blank" rel="noopener noreferrer">
+                See our 4× Best of Houzz award-winning portfolio →
+              </a>
+            </p>
+          </div>
+        </div>
+
+        <div class="service-area">
+          <h3>Service Area</h3>
+          <ul>
+            <li>Richmond, VA &amp; surrounding counties</li>
+            <li>Chester &amp; Chesterfield County, VA</li>
+            <li>Henrico &amp; Hanover County, VA</li>
+            <li>Colonial Heights &amp; Petersburg, VA</li>
+            <li>Commercial projects — wider radius available</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- RIGHT: Estimate Form -->
+      <div class="estimate-form-wrap">
+        <h2>📋 Estimate <span style="color:var(--gold)">Request Form</span></h2>
+        <form id="estimate-form" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname">First Name <span class="req">*</span></label>
+              <input type="text" id="fname" name="fname" placeholder="John" required autocomplete="given-name" />
+            </div>
+            <div class="form-group">
+              <label for="lname">Last Name <span class="req">*</span></label>
+              <input type="text" id="lname" name="lname" placeholder="Smith" required autocomplete="family-name" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number <span class="req">*</span></label>
+            <input type="tel" id="phone" name="phone" placeholder="(804) 555-0100" required autocomplete="tel" />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="john@example.com" autocomplete="email" />
+          </div>
+
+          <div class="form-group">
+            <label for="address">Project Address / City <span class="req">*</span></label>
+            <input type="text" id="address" name="address" placeholder="e.g. 123 Main St, Chester, VA" required autocomplete="street-address" />
+          </div>
+
+          <div class="form-group">
+            <label for="service">Type of Service <span class="req">*</span></label>
+            <select id="service" name="service" required>
+              <option value="" disabled selected>Select a service…</option>
+              <option value="residential-driveway">Residential Driveway (New)</option>
+              <option value="driveway-resurface">Driveway Resurfacing / Overlay</option>
+              <option value="commercial-lot">Commercial Parking Lot</option>
+              <option value="sealcoating">Sealcoating</option>
+              <option value="repairs">Repairs &amp; Patching</option>
+              <option value="grading">Grading &amp; Base Prep</option>
+              <option value="hoa-road">HOA / Community Road</option>
+              <option value="other">Other / Not Sure</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="size">Approximate Project Size</label>
+            <select id="size" name="size">
+              <option value="" disabled selected>Select a range…</option>
+              <option value="small">Small — Single driveway</option>
+              <option value="medium">Medium — Multi-unit or small lot</option>
+              <option value="large">Large — Commercial lot or road</option>
+              <option value="unsure">Not sure yet</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Project Details &amp; Questions</label>
+            <textarea id="message" name="message" placeholder="Describe your project — square footage estimate, existing surface condition, timeline, etc."></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">📨 Submit Estimate Request</button>
+          <p class="form-note">We typically respond within one business day. Your info is never shared.</p>
+          <div class="success-msg" id="success-msg" role="alert">
+            ✅ <strong>Request received!</strong> We'll be in touch within one business day.
+            For urgent needs, call <a href="tel:8044461296" style="color:#86efac">804-446-1296</a>.
+          </div>
+        </form>
+      </div>
+
+    </div><!-- /contact-grid -->
+  </div>
+</section>
+
+<!-- ── FOOTER ──────────────────────────────────────────────────── -->
+<footer>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="index.html#services">Services</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contact.html">Contact / Estimate</a>
+  </div>
+  <p>
+    <strong style="color:var(--gold)">J. Worden &amp; Sons Asphalt Paving</strong> &mdash;
+    Richmond &amp; Chester, VA &mdash;
+    <a href="tel:8044461296">804-446-1296</a>
+  </p>
+  <p style="margin-top:0.5rem">&copy; <span id="yr"></span> J. Worden &amp; Sons. All rights reserved. Licensed &amp; Insured.</p>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // Hamburger
+  const header = document.getElementById('site-header');
+  const hamburger = document.getElementById('hamburger');
+  hamburger.addEventListener('click', () => {
+    const open = header.classList.toggle('nav-open');
+    hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  document.querySelectorAll('#main-nav a').forEach(link => {
+    link.addEventListener('click', () => {
+      header.classList.remove('nav-open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Form submission — shows success message; replace with real backend/Formspree/Kickserv URL if needed
+  document.getElementById('estimate-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const required = this.querySelectorAll('[required]');
+    let valid = true;
+    required.forEach(field => {
+      if (!field.value.trim()) {
+        field.style.borderColor = '#ef4444';
+        valid = false;
+      } else {
+        field.style.borderColor = '';
+      }
+    });
+    if (!valid) return;
+
+    // TODO: Replace this block with a fetch() call to Formspree, Netlify Forms, or Kickserv
+    // Example: fetch('https://formspree.io/f/YOUR_ID', { method:'POST', body: new FormData(this) })
+    document.getElementById('success-msg').style.display = 'block';
+    this.querySelectorAll('input, select, textarea').forEach(f => f.value = '');
+    window.scrollTo({ top: document.getElementById('success-msg').offsetTop - 100, behavior: 'smooth' });
+  });
+</script>
+</body>
+</html>
