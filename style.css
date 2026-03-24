@@ -10,8 +10,8 @@
   --black:    #111111;
   --charcoal: #2b2b2b;
   --asphalt:  #3d3d3d;
-  --gold:     #c8a84b;
-  --gold-light: #e0c06a;
+  --gold:     #ffcc00;
+  --gold-light: #ffd633;
   --white:    #ffffff;
   --off-white:#f5f5f0;
   --gray:     #888888;
@@ -26,7 +26,7 @@ html {
 }
 
 body {
-  font-family: 'Georgia', 'Times New Roman', serif;
+  font-family: 'Arial Black', sans-serif;
   color: var(--charcoal);
   background: var(--white);
   line-height: 1.7;
@@ -108,12 +108,13 @@ nav a:hover, nav a:focus {
 
 /* ── Hero ── */
 .hero {
-  background: linear-gradient(160deg, var(--black) 0%, var(--asphalt) 100%);
-  color: var(--white);
-  padding: 6rem 1.5rem 5rem;
+  background: #1a1a1a;
+  color: var(--gold);
+  padding: 80px 20px;
   text-align: center;
   position: relative;
   overflow: hidden;
+  border-bottom: 10px solid var(--gold);
 }
 
 .hero::before {
@@ -185,8 +186,11 @@ nav a:hover, nav a:focus {
 
 .btn-primary {
   background: var(--gold);
-  color: var(--black);
+  color: #000;
   border: 2px solid var(--gold);
+  padding: 20px 40px;
+  text-transform: uppercase;
+  border-radius: 0;
 }
 
 .btn-primary:hover, .btn-primary:focus {
