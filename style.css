@@ -592,3 +592,50 @@ footer a {
     padding: 4rem 1.5rem 3.5rem;
   }
 }
+/* --- PREMIUM FIX FOR CUT-OFF CONTENT --- */
+.recent-work-section {
+  padding: 80px 0;
+  background: var(--off-white);
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.project-card {
+  background: var(--white);
+  border: 1px solid var(--light-gray);
+  display: flex;
+  flex-direction: column;
+  min-height: 450px; /* Prevents text from ever being cut off */
+  transition: transform 0.3s ease;
+}
+
+.image-box {
+  background: var(--asphalt);
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  text-align: center;
+  color: var(--gold);
+  border-bottom: 4px solid var(--gold);
+}
+
+.card-content {
+  padding: 25px;
+  flex-grow: 1;
+}
+
+/* --- SEO DOMINATION FOOTER --- */
+.premium-footer {
+  background: var(--black);
+  color: var(--white);
+  padding: 80px 0;
+  border-top: 6px solid var(--gold);
+  margin-top: 60px;
+}
