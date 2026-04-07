@@ -3,85 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>J. Worden & Sons Asphalt Paving | Richmond & Chester VA</title>
-    <meta name="description" content="4th Generation Asphalt Paving Legacy. Serving Richmond, Chester, and Central Virginia with premium paving and sealcoating.">
+    <title>Premium Asphalt Paving Services | J. Worden & Sons</title>
+    <meta name="description" content="Commercial and residential asphalt paving services in Richmond, Chester, and Central Virginia. 4th-generation paving experts.">
     
+    <link rel="stylesheet" href="style.css">
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "PavingBusiness",
-      "name": "J. Worden & Sons Asphalt Paving",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "1601 Ware Bottom Springs Rd, Suite 214",
-        "addressLocality": "Chester",
-        "addressRegion": "VA",
-        "postalCode": "23836"
+      "@type": "Service",
+      "serviceType": "Asphalt Paving",
+      "provider": {
+        "@type": "PavingBusiness",
+        "name": "J. Worden & Sons Asphalt Paving",
+        "url": "https://jwordenasphaltpaving.com"
       },
-      "areaServed": ["Richmond", "Chester", "Midlothian", "Henrico", "Tuckahoe"],
-      "url": "https://jwordenasphaltpaving.com"
+      "areaServed": ["Richmond", "Chester", "Central Virginia"],
+      "description": "High-quality commercial and residential asphalt paving installation."
     }
     </script>
-
-    <style>
-        :root { --gold: #D4AF37; --black: #1a1a1a; --white: #ffffff; }
-        body { font-family: 'Helvetica', sans-serif; margin: 0; background: var(--black); color: var(--white); }
-        .hero { padding: 80px 20px; text-align: center; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1533150834822-70b189b45039?auto=format&fit=crop&q=80'); background-size: cover; }
-        .hero h1 { color: var(--gold); font-size: 3rem; text-transform: uppercase; margin-bottom: 10px; }
-        
-        /* PREMIUM FORM STYLING */
-        .form-container { max-width: 600px; margin: -50px auto 50px; background: #2a2a2a; padding: 40px; border-top: 5px solid var(--gold); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        .form-group { display: flex; gap: 15px; margin-bottom: 15px; }
-        input, select, textarea { width: 100%; padding: 12px; background: #333; border: 1px solid #444; color: white; border-radius: 4px; }
-        input:focus { border-color: var(--gold); outline: none; }
-        .btn-premium { width: 100%; padding: 15px; background: var(--gold); color: black; border: none; font-weight: bold; cursor: pointer; text-transform: uppercase; transition: 0.3s; margin-top: 10px; }
-        .btn-premium:hover { background: #b8962e; transform: translateY(-2px); }
-    </style>
 </head>
 <body>
 
-    <section class="hero">
-        <h1>J. Worden & Sons</h1>
-        <p>4th Generation Asphalt Paving Excellence</p>
+    <nav>
+        <div class="logo" style="color: var(--gold); font-weight: bold; font-size: 1.2rem;">J. WORDEN & SONS</div>
+        <div>
+            <a href="index.html">Home</a>
+            <a href="#quote">Get a Quote</a>
+        </div>
+    </nav>
+
+    <section class="section" style="text-align: center; border-bottom: 1px solid #333;">
+        <h1 class="text-gold">Commercial & Residential Asphalt Paving</h1>
+        <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto;">
+            A strong foundation is everything. From high-traffic commercial parking lots to premium residential driveways, our 4th-generation crew uses top-tier materials and state-of-the-art equipment to lay asphalt that stands the test of time.
+        </p>
     </section>
 
-    <div class="form-container">
-        <h2 style="text-align: center; color: var(--gold);">Request a Free Estimate</h2>
-        <form id="lead-form">
-            <div class="form-group">
-                <input type="text" name="customer_name" placeholder="Full Name" required>
-                <input type="email" name="customer_email" placeholder="Email Address" required>
-            </div>
-            <div class="form-group">
-                <input type="tel" name="customer_phone" placeholder="Phone Number" required>
-                <select name="service_type">
-                    <option value="asphalt_paving">Asphalt Paving</option>
-                    <option value="sealcoating">Sealcoating</option>
-                    <option value="repair">Maintenance/Repair</option>
-                </select>
-            </div>
-            <textarea name="job_description" rows="4" placeholder="How can we help with your Richmond or Chester project?"></textarea>
-            <input type="hidden" name="source_url" id="source_url">
-            <button type="submit" class="btn-premium">Submit Request</button>
-        </form>
-    </div>
+    <section id="quote" class="section">
+        <div class="card" style="max-width: 600px; margin: 0 auto; border-top: 4px solid var(--gold);">
+            <h2 style="text-align: center;">Get a Paving Estimate</h2>
+            <form id="lead-form">
+                <div style="display: flex; gap: 15px; margin-bottom: 15px;">
+                    <input type="text" name="customer_name" placeholder="Full Name" style="width: 100%; padding: 12px;" required>
+                    <input type="email" name="customer_email" placeholder="Email Address" style="width: 100%; padding: 12px;" required>
+                </div>
+                <div style="display: flex; gap: 15px; margin-bottom: 15px;">
+                    <input type="tel" name="customer_phone" placeholder="Phone Number" style="width: 100%; padding: 12px;" required>
+                    <select style="width: 100%; padding: 12px;" disabled>
+                        <option selected>Asphalt Paving</option>
+                    </select>
+                    <input type="hidden" name="service_type" value="asphalt_paving">
+                </div>
+                <textarea name="job_description" rows="4" placeholder="Tell us about your paving project (e.g., size, location, current condition)..." style="width: 100%; padding: 12px; margin-bottom: 15px;"></textarea>
+                
+                <input type="hidden" name="source_url" id="source_url">
+                
+                <button type="submit" style="width: 100%; padding: 15px; background: var(--gold); color: black; font-weight: bold; cursor: pointer; text-transform: uppercase; border: none;">Submit Request</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 J. Worden & Sons Asphalt Paving. 4th Generation Legacy.</p>
+        <p>Headquarters: 1601 Ware Bottom Springs Rd, Suite 214, Chester, VA 23836</p>
+    </footer>
 
     <script>
         document.getElementById('source_url').value = window.location.href;
         document.getElementById('lead-form').addEventListener('submit', async (e) => {
             e.preventDefault();
             const formData = new FormData(e.target);
-            // This hits your Netlify Function securely
-            const response = await fetch('/.netlify/functions/send-to-kickserv', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(Object.fromEntries(formData))
-            });
-            if(response.ok) {
-                alert('Your request has been sent to our team!');
-                e.target.reset();
-            } else {
-                alert('Connection error. Please call us directly for an estimate.');
+            try {
+                const response = await fetch('/.netlify/functions/send-to-kickserv', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(Object.fromEntries(formData))
+                });
+                if(response.ok) {
+                    alert('Thanks! Our team will contact you shortly regarding your paving project.');
+                    e.target.reset();
+                } else {
+                    throw new Error('Network response was not ok');
+                }
+            } catch (error) {
+                alert('There was an issue sending your request. Please call our Chester HQ directly!');
             }
         });
     </script>
