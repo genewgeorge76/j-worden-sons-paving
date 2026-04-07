@@ -1,35 +1,89 @@
-<form id="lead-form" class="premium-form">
-    <div class="form-group">
-        <input type="text" name="customer_name" placeholder="Full Name" required>
-        <input type="email" name="customer_email" placeholder="Email Address" required>
-    </div>
-    <div class="form-group">
-        <input type="tel" name="customer_phone" placeholder="Phone Number" required>
-        <select name="service_type">
-            <option value="asphalt_paving">Asphalt Paving</option>
-            <option value="sealcoating">Sealcoating</option>
-            <option value="repair">Crack Repair/Maintenance</option>
-        </select>
-    </div>
-    <textarea name="job_description" placeholder="Describe your project (e.g., Driveway in Richmond)"></textarea>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J. Worden & Sons Asphalt Paving | Richmond & Chester VA</title>
+    <meta name="description" content="4th Generation Asphalt Paving Legacy. Serving Richmond, Chester, and Central Virginia with premium paving and sealcoating.">
     
-    <input type="hidden" name="source_url" id="source_url">
-    
-    <button type="submit" class="btn-premium">Get My Free Estimate</button>
-</form>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "PavingBusiness",
+      "name": "J. Worden & Sons Asphalt Paving",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1601 Ware Bottom Springs Rd, Suite 214",
+        "addressLocality": "Chester",
+        "addressRegion": "VA",
+        "postalCode": "23836"
+      },
+      "areaServed": ["Richmond", "Chester", "Midlothian", "Henrico", "Tuckahoe"],
+      "url": "https://jwordenasphaltpaving.com"
+    }
+    </script>
 
-<script>
-    // Automatically tag the lead with the specific city page they are on
-    document.getElementById('source_url').value = window.location.href;
+    <style>
+        :root { --gold: #D4AF37; --black: #1a1a1a; --white: #ffffff; }
+        body { font-family: 'Helvetica', sans-serif; margin: 0; background: var(--black); color: var(--white); }
+        .hero { padding: 80px 20px; text-align: center; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1533150834822-70b189b45039?auto=format&fit=crop&q=80'); background-size: cover; }
+        .hero h1 { color: var(--gold); font-size: 3rem; text-transform: uppercase; margin-bottom: 10px; }
+        
+        /* PREMIUM FORM STYLING */
+        .form-container { max-width: 600px; margin: -50px auto 50px; background: #2a2a2a; padding: 40px; border-top: 5px solid var(--gold); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .form-group { display: flex; gap: 15px; margin-bottom: 15px; }
+        input, select, textarea { width: 100%; padding: 12px; background: #333; border: 1px solid #444; color: white; border-radius: 4px; }
+        input:focus { border-color: var(--gold); outline: none; }
+        .btn-premium { width: 100%; padding: 15px; background: var(--gold); color: black; border: none; font-weight: bold; cursor: pointer; text-transform: uppercase; transition: 0.3s; margin-top: 10px; }
+        .btn-premium:hover { background: #b8962e; transform: translateY(-2px); }
+    </style>
+</head>
+<body>
 
-    document.getElementById('lead-form').addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const formData = new FormData(e.target);
-        // This is where we point to your Netlify Function (Step 3) for secure Kickserv delivery
-        const response = await fetch('/.netlify/functions/send-to-kickserv', {
-            method: 'POST',
-            body: JSON.stringify(Object.fromEntries(formData))
+    <section class="hero">
+        <h1>J. Worden & Sons</h1>
+        <p>4th Generation Asphalt Paving Excellence</p>
+    </section>
+
+    <div class="form-container">
+        <h2 style="text-align: center; color: var(--gold);">Request a Free Estimate</h2>
+        <form id="lead-form">
+            <div class="form-group">
+                <input type="text" name="customer_name" placeholder="Full Name" required>
+                <input type="email" name="customer_email" placeholder="Email Address" required>
+            </div>
+            <div class="form-group">
+                <input type="tel" name="customer_phone" placeholder="Phone Number" required>
+                <select name="service_type">
+                    <option value="asphalt_paving">Asphalt Paving</option>
+                    <option value="sealcoating">Sealcoating</option>
+                    <option value="repair">Maintenance/Repair</option>
+                </select>
+            </div>
+            <textarea name="job_description" rows="4" placeholder="How can we help with your Richmond or Chester project?"></textarea>
+            <input type="hidden" name="source_url" id="source_url">
+            <button type="submit" class="btn-premium">Submit Request</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('source_url').value = window.location.href;
+        document.getElementById('lead-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            // This hits your Netlify Function securely
+            const response = await fetch('/.netlify/functions/send-to-kickserv', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(Object.fromEntries(formData))
+            });
+            if(response.ok) {
+                alert('Your request has been sent to our team!');
+                e.target.reset();
+            } else {
+                alert('Connection error. Please call us directly for an estimate.');
+            }
         });
-        if(response.ok) alert('Estimate Request Sent! We will contact you shortly.');
-    });
-</script>
+    </script>
+</body>
+</html>
