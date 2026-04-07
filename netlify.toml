@@ -1,29 +1,26 @@
+# J. WORDEN & SONS - PREMIUM NETLIFY CONFIGURATION
+
 [build]
-  publish = "."
-  command = ""
+  publish = "/"
+  functions = "netlify/functions"
 
-[[redirects]]
-  from = "https://j-worden-sons-pavinggemini.netlify.app/*"
-  to   = "https://www.jwordenasphaltpaving.com/:splat"
-  status = 301
-  force = true
+# HIGH-SPEED PERFORMANCE HEADERS
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Cache-Control = "public, max-age=31536000"
 
+# KICKSERV API GATEWAY
 [[redirects]]
-  from = "https://jwordenasphaltpaving.com/*"
-  to   = "https://www.jwordenasphaltpaving.com/:splat"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/contact"
-  to   = "/contact.html"
+  from = "/api/send-to-kickserv"
+  to = "/.netlify/functions/send-to-kickserv"
   status = 200
 
+# CUSTOM 404 PAGE
 [[redirects]]
-  from = "/portfolio"
-  to   = "/portfolio.html"
-  status = 200
-
-[forms]
-  [forms.spam_filter]
-    enabled = true
+  from = "/*"
+  to = "/index.html"
+  status = 404
