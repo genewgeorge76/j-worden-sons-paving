@@ -1,448 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="J. Worden &amp; Sons Asphalt Paving portfolio — 4× Best of Houzz winner, KFC &amp; Arby's commercial lots, Maidstone Village residential driveways. Richmond, VA." />
-  <title>Portfolio | J. Worden &amp; Sons Asphalt Paving</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Areas | J. Worden & Sons Asphalt Paving</title>
+    <meta name="description" content="J. Worden & Sons serves 41 cities across Central Virginia, Northern Virginia, and Hampton Roads with premium asphalt paving and sealcoating.">
+    
+    <link rel="stylesheet" href="style.css">
 
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --black:   #0a0a0a;
-      --asphalt: #1a1a2e;
-      --gold:    #d4a017;
-      --gold-lt: #f0c040;
-      --white:   #f5f5f5;
-      --gray:    #6b7280;
-      --radius:  8px;
-    }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Segoe UI', Arial, sans-serif; background: var(--black); color: var(--white); line-height: 1.6; }
-    a { color: inherit; text-decoration: none; }
-
-    /* ── Nav (shared) ─────────────────────────────────────────── */
-    header {
-      position: sticky; top: 0; z-index: 1000;
-      background: rgba(10,10,10,0.97); border-bottom: 2px solid var(--gold);
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 2rem; height: 64px;
-    }
-    .logo { font-size: 1.15rem; font-weight: 700; color: var(--gold); letter-spacing: 0.03em; white-space: nowrap; }
-    nav ul { display: flex; gap: 0.25rem; list-style: none; }
-    nav a { display: block; padding: 0.45rem 0.9rem; border-radius: var(--radius); font-size: 0.92rem; font-weight: 600; letter-spacing: 0.02em; transition: background 0.2s, color 0.2s; }
-    nav a:hover, nav a.active { background: var(--gold); color: var(--black); }
-    .nav-cta { background: var(--gold); color: var(--black) !important; padding: 0.45rem 1.1rem !important; }
-    .nav-cta:hover { background: var(--gold-lt) !important; }
-    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
-    .hamburger span { display: block; width: 26px; height: 3px; background: var(--gold); border-radius: 2px; transition: 0.3s; }
-    .nav-open .hamburger span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-    .nav-open .hamburger span:nth-child(2) { opacity: 0; }
-    .nav-open .hamburger span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-
-    /* ── Page Hero ────────────────────────────────────────────── */
-    .page-hero {
-      background: linear-gradient(160deg, rgba(10,10,10,0.9) 0%, rgba(26,26,46,0.85) 100%),
-        repeating-linear-gradient(135deg, rgba(212,160,23,0.04) 0px, rgba(212,160,23,0.04) 2px, transparent 2px, transparent 40px);
-      padding: 5rem 1.5rem 3rem;
-      text-align: center;
-    }
-    .section-tag { display: inline-block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
-    h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 1rem; }
-    h1 span { color: var(--gold); }
-    .page-hero p { color: #aaa; font-size: 1.05rem; max-width: 580px; margin: 0 auto; }
-
-    /* ── Layout ───────────────────────────────────────────────── */
-    section { padding: 4rem 1.5rem; }
-    .container { max-width: 1100px; margin: 0 auto; }
-    h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 800; margin-bottom: 0.75rem; }
-    h2 span { color: var(--gold); }
-    .section-intro { color: #aaa; margin-bottom: 2.5rem; max-width: 640px; }
-
-    /* ── Awards Strip ─────────────────────────────────────────── */
-    .awards-section { background: var(--gold); color: var(--black); }
-    .awards-section .section-tag { color: var(--black); opacity: 0.7; }
-    .awards-section h2 { color: var(--black); }
-    .awards-section .section-intro { color: rgba(10,10,10,0.7); }
-    .awards-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.5rem; margin-top: 2rem;
-    }
-    .award-card {
-      background: rgba(0,0,0,0.12); border-radius: var(--radius);
-      padding: 1.75rem 1.25rem; text-align: center;
-    }
-    .award-card .trophy { font-size: 2.8rem; margin-bottom: 0.75rem; }
-    .award-card h3 { font-size: 1rem; font-weight: 800; margin-bottom: 0.4rem; }
-    .award-card p { font-size: 0.85rem; opacity: 0.75; }
-
-    /* ── Project Gallery ──────────────────────────────────────── */
-    .gallery-section { background: #111; }
-    .filter-bar { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
-    .filter-btn {
-      padding: 0.45rem 1rem; border-radius: 999px; font-size: 0.85rem; font-weight: 600;
-      border: 1px solid #333; background: transparent; color: #ccc;
-      cursor: pointer; transition: background 0.2s, color 0.2s, border-color 0.2s;
-    }
-    .filter-btn.active, .filter-btn:hover { background: var(--gold); color: var(--black); border-color: var(--gold); }
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1.5rem;
-    }
-    .project-card {
-      background: var(--asphalt); border: 1px solid #2a2a3e;
-      border-radius: var(--radius); overflow: hidden;
-      transition: border-color 0.2s, transform 0.2s;
-    }
-    .project-card:hover { border-color: var(--gold); transform: translateY(-4px); }
-    .project-card[data-cat].hidden { display: none; }
-
-    /* Photo placeholder (replace src="" with real image URLs) */
-    .project-img {
-      width: 100%; aspect-ratio: 4/3; background: #2a2a3e;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 3rem; position: relative; overflow: hidden;
-    }
-    .project-img img {
-      width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0;
-    }
-    .project-img .placeholder-icon { position: relative; z-index: 1; }
-    .project-badge {
-      position: absolute; top: 0.75rem; right: 0.75rem; z-index: 2;
-      background: var(--gold); color: var(--black);
-      font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
-      letter-spacing: 0.08em; padding: 0.25rem 0.6rem; border-radius: 999px;
-    }
-    .project-body { padding: 1.25rem; }
-    .project-body h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.4rem; }
-    .project-body p { color: #aaa; font-size: 0.88rem; }
-    .project-meta { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 0.75rem; font-size: 0.8rem; color: var(--gray); }
-    .project-meta span::before { margin-right: 0.25rem; }
-
-    /* ── Houzz CTA ────────────────────────────────────────────── */
-    .houzz-section { background: var(--asphalt); border-top: 2px solid var(--gold); text-align: center; }
-    .houzz-section p { color: #aaa; margin-bottom: 2rem; max-width: 540px; margin-left: auto; margin-right: auto; }
-    .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.85rem 2rem; border-radius: var(--radius); font-size: 1rem; font-weight: 700; cursor: pointer; border: 2px solid transparent; transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.1s; }
-    .btn:active { transform: scale(0.97); }
-    .btn-primary { background: var(--gold); color: var(--black); border-color: var(--gold); }
-    .btn-primary:hover { background: var(--gold-lt); border-color: var(--gold-lt); }
-    .btn-outline { background: transparent; color: var(--white); border-color: var(--white); }
-    .btn-outline:hover { background: var(--white); color: var(--black); }
-    .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
-
-    /* ── Footer ───────────────────────────────────────────────── */
-    footer { background: var(--black); border-top: 1px solid #222; padding: 2.5rem 1.5rem; text-align: center; color: var(--gray); font-size: 0.85rem; }
-    footer a { color: var(--gold); }
-    footer a:hover { color: var(--gold-lt); }
-    .footer-links { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1rem; }
-
-    /* ── Responsive ───────────────────────────────────────────── */
-    @media (max-width: 700px) {
-      header { padding: 0 1rem; }
-      .hamburger { display: flex; }
-      nav { display: none; position: absolute; top: 64px; left: 0; right: 0; background: rgba(10,10,10,0.98); padding: 1rem; border-bottom: 2px solid var(--gold); }
-      .nav-open nav { display: block; }
-      nav ul { flex-direction: column; gap: 0.25rem; }
-      nav a { padding: 0.75rem 1rem; }
-    }
-  </style>
+    <style>
+        .city-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 40px;
+        }
+        .city-link {
+            background: #222;
+            padding: 15px;
+            border-radius: 4px;
+            border-left: 3px solid var(--gold);
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            text-align: left;
+        }
+        .city-link:hover {
+            background: #333;
+            transform: translateX(5px);
+            color: var(--gold);
+        }
+    </style>
 </head>
 <body>
 
-<!-- ── HEADER ─────────────────────────────────────────────────── -->
-<header id="site-header">
-  <div class="logo">⬛ J. Worden &amp; Sons</div>
-  <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
-  <nav id="main-nav" aria-label="Main navigation">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="index.html#services">Services</a></li>
-      <li><a href="portfolio.html" class="active">Portfolio</a></li>
-      <li><a href="locations/index.html">Locations</a></li>
-      <li><a href="contact.html" class="nav-cta">Get an Estimate</a></li>
-    </ul>
-  </nav>
-</header>
-
-<!-- ── PAGE HERO ──────────────────────────────────────────────── -->
-<div class="page-hero">
-  <span class="section-tag">40+ Years of Craftsmanship</span>
-  <h1>Our <span>Portfolio</span></h1>
-  <p>
-    From residential driveways in Chesterfield County to commercial parking lots
-    for national restaurant chains — every project reflects our 4th-generation standard of quality.
-  </p>
-</div>
-
-<!-- ── AWARDS ─────────────────────────────────────────────────── -->
-<section class="awards-section">
-  <div class="container">
-    <span class="section-tag">Recognition &amp; Awards</span>
-    <h2>4-Time Best of Houzz Award Winner</h2>
-    <p class="section-intro">
-      Houzz is the world's largest platform for home renovation and design, with more than 65 million
-      homeowners. Winning four times means our clients chose us as their best — year after year.
-    </p>
-    <div class="awards-grid">
-      <div class="award-card">
-        <div class="trophy">🏆</div>
-        <h3>Best of Houzz 2022</h3>
-        <p>Service Award — Paving &amp; Driveways</p>
-      </div>
-      <div class="award-card">
-        <div class="trophy">🏆</div>
-        <h3>Best of Houzz 2023</h3>
-        <p>Service Award — Paving &amp; Driveways</p>
-      </div>
-      <div class="award-card">
-        <div class="trophy">🏆</div>
-        <h3>Best of Houzz 2024</h3>
-        <p>Service Award — Paving &amp; Driveways</p>
-      </div>
-      <div class="award-card">
-        <div class="trophy">🏆</div>
-        <h3>Best of Houzz 2025</h3>
-        <p>Service Award — Paving &amp; Driveways</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── PROJECT GALLERY ────────────────────────────────────────── -->
-<section class="gallery-section" id="projects">
-  <div class="container">
-    <span class="section-tag">Project Highlights</span>
-    <h2>Recent <span>Completed Projects</span></h2>
-    <p class="section-intro">
-      Browse a selection of our commercial and residential work across the Richmond metro area.
-      Photos are added regularly — check back often.
-    </p>
-
-    <!-- Filter Buttons -->
-    <div class="filter-bar" role="group" aria-label="Filter projects by type">
-      <button class="filter-btn active" data-filter="all">All Projects</button>
-      <button class="filter-btn" data-filter="commercial">Commercial</button>
-      <button class="filter-btn" data-filter="residential">Residential</button>
-      <button class="filter-btn" data-filter="sealcoat">Sealcoating</button>
-    </div>
-
-    <!-- Gallery Grid -->
-    <div class="gallery-grid" id="gallery">
-
-      <!-- KFC Projects -->
-      <article class="project-card" data-cat="commercial">
-        <div class="project-img">
-          <!-- <img src="images/kfc-route-1.jpg" alt="KFC parking lot paving, Route 1 Richmond VA" loading="lazy" /> -->
-          <span class="placeholder-icon">🍗</span>
-          <span class="project-badge">Commercial</span>
+    <nav>
+        <div class="logo" style="color: var(--gold); font-weight: bold; font-size: 1.2rem;">J. WORDEN & SONS</div>
+        <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+            <a href="index.html">Home</a>
+            <a href="asphalt-paving.html">Paving</a>
+            <a href="sealcoating.html">Sealcoating</a>
+            <a href="crack-repair.html">Maintenance</a>
+            <a href="portfolio.html" style="color: var(--gold);">Service Areas</a>
+            <a href="index.html#quote">Get a Quote</a>
         </div>
-        <div class="project-body">
-          <h3>KFC — Route 1, Richmond VA</h3>
-          <p>Full-depth reclamation and resurfacing of a high-traffic drive-through and parking lot. Completed on schedule for franchise reopening.</p>
-          <div class="project-meta">
-            <span>📐 ~8,500 sq ft</span>
-            <span>🏢 Commercial</span>
-          </div>
-        </div>
-      </article>
+    </nav>
 
-      <article class="project-card" data-cat="commercial">
-        <div class="project-img">
-          <!-- <img src="images/arby-hull-st.jpg" alt="Arby's parking lot paving, Hull Street Richmond VA" loading="lazy" /> -->
-          <span class="placeholder-icon">🥩</span>
-          <span class="project-badge">Commercial</span>
-        </div>
-        <div class="project-body">
-          <h3>Arby's — Hull Street, Richmond VA</h3>
-          <p>Overlay and re-striping of parking lot and drive-through lanes. Work completed overnight to minimize business disruption.</p>
-          <div class="project-meta">
-            <span>📐 ~12,000 sq ft</span>
-            <span>🏢 Commercial</span>
-          </div>
-        </div>
-      </article>
+    <section class="section" style="text-align: center; border-bottom: 1px solid #333;">
+        <h1 class="text-gold">Areas We Serve</h1>
+        <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto;">
+            From our headquarters in Chester, VA, our 4th-generation paving crews proudly serve commercial and residential clients across the following Virginia communities. Select your city below to request a local estimate.
+        </p>
 
-      <article class="project-card" data-cat="commercial">
-        <div class="project-img">
-          <!-- <img src="images/taco-bell-chesterfield.jpg" alt="Taco Bell parking lot paving, Chesterfield VA" loading="lazy" /> -->
-          <span class="placeholder-icon">🌮</span>
-          <span class="project-badge">Commercial</span>
+        <div class="city-grid">
+            <a href="locations/alexandria-va.html" class="city-link">Alexandria</a>
+            <a href="locations/arlington-va.html" class="city-link">Arlington</a>
+            <a href="locations/ashburn-va.html" class="city-link">Ashburn</a>
+            <a href="locations/ashland-va.html" class="city-link">Ashland</a>
+            <a href="locations/charlottesville-va.html" class="city-link">Charlottesville</a>
+            <a href="locations/chesapeake-va.html" class="city-link">Chesapeake</a>
+            <a href="locations/chester-va.html" class="city-link">Chester</a>
+            <a href="locations/colonial-heights-va.html" class="city-link">Colonial Heights</a>
+            <a href="locations/culpeper-va.html" class="city-link">Culpeper</a>
+            <a href="locations/dale-city-va.html" class="city-link">Dale City</a>
+            <a href="locations/fairfax-va.html" class="city-link">Fairfax</a>
+            <a href="locations/fredericksburg-va.html" class="city-link">Fredericksburg</a>
+            <a href="locations/glen-allen-va.html" class="city-link">Glen Allen</a>
+            <a href="locations/goochland-va.html" class="city-link">Goochland</a>
+            <a href="locations/hampton-va.html" class="city-link">Hampton</a>
+            <a href="locations/harrisonburg-va.html" class="city-link">Harrisonburg</a>
+            <a href="locations/henrico-va.html" class="city-link">Henrico</a>
+            <a href="locations/hopewell-va.html" class="city-link">Hopewell</a>
+            <a href="locations/leesburg-va.html" class="city-link">Leesburg</a>
+            <a href="locations/lynchburg-va.html" class="city-link">Lynchburg</a>
+            <a href="locations/manassas-va.html" class="city-link">Manassas</a>
+            <a href="locations/mechanicsville-va.html" class="city-link">Mechanicsville</a>
+            <a href="locations/midlothian-va.html" class="city-link">Midlothian</a>
+            <a href="locations/newport-news-va.html" class="city-link">Newport News</a>
+            <a href="locations/norfolk-va.html" class="city-link">Norfolk</a>
+            <a href="locations/petersburg-va.html" class="city-link">Petersburg</a>
+            <a href="locations/portsmouth-va.html" class="city-link">Portsmouth</a>
+            <a href="locations/powhatan-va.html" class="city-link">Powhatan</a>
+            <a href="locations/reston-va.html" class="city-link">Reston</a>
+            <a href="locations/richmond-va.html" class="city-link">Richmond</a>
+            <a href="locations/short-pump-va.html" class="city-link">Short Pump</a>
+            <a href="locations/stafford-va.html" class="city-link">Stafford</a>
+            <a href="locations/staunton-va.html" class="city-link">Staunton</a>
+            <a href="locations/suffolk-va.html" class="city-link">Suffolk</a>
+            <a href="locations/tappahannock-va.html" class="city-link">Tappahannock</a>
+            <a href="locations/tuckahoe-va.html" class="city-link">Tuckahoe</a>
+            <a href="locations/tysons-va.html" class="city-link">Tysons</a>
+            <a href="locations/virginia-beach-va.html" class="city-link">Virginia Beach</a>
+            <a href="locations/warrenton-va.html" class="city-link">Warrenton</a>
+            <a href="locations/waynesboro-va.html" class="city-link">Waynesboro</a>
+            <a href="locations/williamsburg-va.html" class="city-link">Williamsburg</a>
+            <a href="locations/winchester-va.html" class="city-link">Winchester</a>
+            <a href="locations/woodbridge-va.html" class="city-link">Woodbridge</a>
         </div>
-        <div class="project-body">
-          <h3>Taco Bell — Chesterfield VA</h3>
-          <p>New asphalt installation following site expansion. Includes ADA-compliant ramp transitions and concrete curb work.</p>
-          <div class="project-meta">
-            <span>📐 ~10,000 sq ft</span>
-            <span>🏢 Commercial</span>
-          </div>
-        </div>
-      </article>
+    </section>
 
-      <!-- Maidstone Village -->
-      <article class="project-card" data-cat="residential">
-        <div class="project-img">
-          <!-- <img src="images/maidstone-entrance.jpg" alt="Maidstone Village community entrance road, Chester VA" loading="lazy" /> -->
-          <span class="placeholder-icon">🏘️</span>
-          <span class="project-badge">Residential</span>
-        </div>
-        <div class="project-body">
-          <h3>Maidstone Village — Community Entrance Road</h3>
-          <p>Full resurfacing of the neighborhood entrance and main internal road. HOA project coordinated across 120+ units in Chester, VA.</p>
-          <div class="project-meta">
-            <span>📐 ~22,000 sq ft</span>
-            <span>🏘️ HOA / Community</span>
-          </div>
-        </div>
-      </article>
+    <footer>
+        <p>&copy; 2026 J. Worden & Sons Asphalt Paving. 4th Generation Legacy.</p>
+        <p>Headquarters: 1601 Ware Bottom Springs Rd, Suite 214, Chester, VA 23836</p>
+    </footer>
 
-      <article class="project-card" data-cat="residential">
-        <div class="project-img">
-          <!-- <img src="images/maidstone-driveways.jpg" alt="Residential driveways, Maidstone Village Chester VA" loading="lazy" /> -->
-          <span class="placeholder-icon">🏠</span>
-          <span class="project-badge">Residential</span>
-        </div>
-        <div class="project-body">
-          <h3>Maidstone Village — Residential Driveways</h3>
-          <p>New driveway installations for 14 single-family homes. Tight scheduling coordinated across active occupied residences.</p>
-          <div class="project-meta">
-            <span>📐 ~700–1,200 sq ft each</span>
-            <span>🏠 Residential</span>
-          </div>
-        </div>
-      </article>
-
-      <article class="project-card" data-cat="residential">
-        <div class="project-img">
-          <!-- <img src="images/chesterfield-driveway.jpg" alt="Residential driveway replacement, Chesterfield County VA" loading="lazy" /> -->
-          <span class="placeholder-icon">🚗</span>
-          <span class="project-badge">Residential</span>
-        </div>
-        <div class="project-body">
-          <h3>Private Driveway — Chesterfield County VA</h3>
-          <p>Full removal of old concrete driveway and new asphalt installation with proper drainage grading. Completed in one day.</p>
-          <div class="project-meta">
-            <span>📐 ~1,800 sq ft</span>
-            <span>🏠 Residential</span>
-          </div>
-        </div>
-      </article>
-
-      <!-- Sealcoating -->
-      <article class="project-card" data-cat="sealcoat">
-        <div class="project-img">
-          <!-- <img src="images/sealcoat-commercial.jpg" alt="Commercial parking lot sealcoating and striping" loading="lazy" /> -->
-          <span class="placeholder-icon">🖤</span>
-          <span class="project-badge">Sealcoating</span>
-        </div>
-        <div class="project-body">
-          <h3>Office Complex Sealcoating — Richmond VA</h3>
-          <p>Full sealcoat and re-stripe of a 3-building office complex. Applied in two shifts over a weekend — zero weekday business disruption.</p>
-          <div class="project-meta">
-            <span>📐 ~35,000 sq ft</span>
-            <span>🏢 Commercial Sealcoat</span>
-          </div>
-        </div>
-      </article>
-
-      <article class="project-card" data-cat="sealcoat">
-        <div class="project-img">
-          <!-- <img src="images/sealcoat-residential.jpg" alt="Residential sealcoating Richmond VA" loading="lazy" /> -->
-          <span class="placeholder-icon">✨</span>
-          <span class="project-badge">Sealcoating</span>
-        </div>
-        <div class="project-body">
-          <h3>Residential Sealcoating — Henrico County VA</h3>
-          <p>Crack fill, edge repair, and two-coat sealcoat application on a 4-year-old driveway to extend pavement life by 10+ years.</p>
-          <div class="project-meta">
-            <span>📐 ~2,200 sq ft</span>
-            <span>🏠 Residential Sealcoat</span>
-          </div>
-        </div>
-      </article>
-
-    </div><!-- /gallery-grid -->
-
-    <p style="color:var(--gray); font-size:0.85rem; margin-top:2rem; text-align:center;">
-      📸 More photos coming soon. Visit our
-      <a href="https://www.houzz.com" target="_blank" rel="noopener noreferrer" style="color:var(--gold)">Houzz profile</a>
-      for the full gallery.
-    </p>
-  </div>
-</section>
-
-<!-- ── HOUZZ CTA ───────────────────────────────────────────────── -->
-<section class="houzz-section">
-  <div class="container">
-    <span class="section-tag">See More on Houzz</span>
-    <h2>View the Full <span>Houzz Gallery</span></h2>
-    <p>
-      Our complete photo gallery, client reviews, and professional credentials are available on our
-      Houzz profile — the platform that awarded us Best of Houzz four times.
-    </p>
-    <div class="btn-group">
-      <a href="https://www.houzz.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-        🏆 Visit Our Houzz Profile
-      </a>
-      <a href="contact.html" class="btn btn-outline">
-        📋 Request a Free Estimate
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ── FOOTER ──────────────────────────────────────────────────── -->
-<footer>
-  <div class="footer-links">
-    <a href="index.html">Home</a>
-    <a href="index.html#services">Services</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="contact.html">Contact / Estimate</a>
-  </div>
-  <p>
-    <strong style="color:var(--gold)">J. Worden &amp; Sons Asphalt Paving</strong> &mdash;
-    Richmond &amp; Chester, VA &mdash;
-    <a href="tel:8044461296">804-446-1296</a>
-  </p>
-  <p style="margin-top:0.5rem">&copy; <span id="yr"></span> J. Worden &amp; Sons. All rights reserved. Licensed &amp; Insured.</p>
-</footer>
-
-<script>
-  document.getElementById('yr').textContent = new Date().getFullYear();
-
-  // Hamburger
-  const header = document.getElementById('site-header');
-  const hamburger = document.getElementById('hamburger');
-  hamburger.addEventListener('click', () => {
-    const open = header.classList.toggle('nav-open');
-    hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
-  document.querySelectorAll('#main-nav a').forEach(link => {
-    link.addEventListener('click', () => {
-      header.classList.remove('nav-open');
-      hamburger.setAttribute('aria-expanded', 'false');
-    });
-  });
-
-  // Gallery filter
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const cards = document.querySelectorAll('.project-card');
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const filter = btn.dataset.filter;
-      cards.forEach(card => {
-        if (filter === 'all' || card.dataset.cat === filter) {
-          card.classList.remove('hidden');
-        } else {
-          card.classList.add('hidden');
-        }
-      });
-    });
-  });
-</script>
 </body>
 </html>
