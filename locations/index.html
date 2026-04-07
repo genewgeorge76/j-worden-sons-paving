@@ -1,391 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="J. Worden &amp; Sons Asphalt Paving serves 41 Virginia cities with commercial and residential asphalt paving, sealcoating, and parking lot construction. Find your city." />
-  <title>Service Areas — 41 Virginia Cities | J. Worden &amp; Sons Asphalt Paving</title>
-  <link rel="canonical" href="https://www.jwordenasphaltpaving.com/locations/" />
-  <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --black:   #0a0a0a;
-      --asphalt: #1a1a2e;
-      --gold:    #d4a017;
-      --gold-lt: #f0c040;
-      --white:   #f5f5f5;
-      --gray:    #6b7280;
-      --radius:  8px;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asphalt Paving Service Areas | J. Worden & Sons | 4th Generation</title>
+    <meta name="description" content="J. Worden & Sons Asphalt Paving: Serving 80+ cities across Virginia and the Kansas City Metro. Class A Licensed. Driveways, parking lots, and sealcoating.">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "PavingContractor",
+      "name": "J. Worden & Sons Asphalt Paving",
+      "url": "https://jwordenasphaltpaving.com/locations/",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1601 Ware Bottom Springs Rd, Suite 214",
+        "addressLocality": "Chester",
+        "addressRegion": "VA",
+        "postalCode": "23836"
+      },
+      "description": "4th Generation Paving Contractor serving the Mid-Atlantic and Midwest regions."
     }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Segoe UI', Arial, sans-serif; background: var(--black); color: var(--white); line-height: 1.6; }
-    a { color: inherit; text-decoration: none; }
-    header {
-      position: sticky; top: 0; z-index: 1000;
-      background: rgba(10,10,10,0.97); border-bottom: 2px solid var(--gold);
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 2rem; height: 64px;
-    }
-    .logo { font-size: 1.15rem; font-weight: 700; color: var(--gold); letter-spacing: 0.03em; white-space: nowrap; }
-    nav ul { display: flex; gap: 0.25rem; list-style: none; }
-    nav a { display: block; padding: 0.45rem 0.9rem; border-radius: var(--radius); font-size: 0.92rem; font-weight: 600; letter-spacing: 0.02em; transition: background 0.2s, color 0.2s; }
-    nav a:hover, nav a.active { background: var(--gold); color: var(--black); }
-    .nav-cta { background: var(--gold); color: var(--black) !important; padding: 0.45rem 1.1rem !important; }
-    .nav-cta:hover { background: var(--gold-lt) !important; }
-    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
-    .hamburger span { display: block; width: 26px; height: 3px; background: var(--gold); border-radius: 2px; transition: 0.3s; }
-    .nav-open .hamburger span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-    .nav-open .hamburger span:nth-child(2) { opacity: 0; }
-    .nav-open .hamburger span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-    .page-hero {
-      background: linear-gradient(160deg, rgba(10,10,10,0.9) 0%, rgba(26,26,46,0.85) 100%),
-        repeating-linear-gradient(135deg, rgba(212,160,23,0.04) 0px, rgba(212,160,23,0.04) 2px, transparent 2px, transparent 40px);
-      padding: 5rem 1.5rem 3rem; text-align: center;
-    }
-    .section-tag { display: inline-block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
-    h1 { font-size: clamp(1.8rem, 4.5vw, 3rem); font-weight: 900; margin-bottom: 1rem; }
-    h1 span { color: var(--gold); }
-    .page-hero p { color: #aaa; font-size: 1.05rem; max-width: 600px; margin: 0 auto 1.5rem; }
-    .btn { display: inline-block; padding: 0.8rem 2rem; border-radius: var(--radius); font-size: 0.95rem; font-weight: 700; transition: background 0.2s, color 0.2s; }
-    .btn-primary { background: var(--gold); color: var(--black); }
-    .btn-primary:hover { background: var(--gold-lt); }
-    section { padding: 4rem 1.5rem; }
-    .container { max-width: 1100px; margin: 0 auto; }
-    h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 800; margin-bottom: 1rem; }
-    h2 span { color: var(--gold); }
-    .section-intro { color: #aaa; margin-bottom: 2rem; max-width: 680px; font-size: 1.05rem; }
-    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; margin-top: 1.5rem; }
-    .service-card { background: var(--asphalt); border: 1px solid #2a2a3e; border-top: 3px solid var(--gold); border-radius: var(--radius); padding: 1.5rem; }
-    .service-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.4rem; color: var(--white); }
-    .service-card p { font-size: 0.88rem; color: #aaa; }
-    .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; margin-top: 1.5rem; }
-    .why-card { background: var(--asphalt); border: 1px solid #2a2a3e; border-radius: var(--radius); padding: 1.5rem; }
-    .why-card .icon { font-size: 2rem; margin-bottom: 0.75rem; }
-    .why-card h3 { font-size: 0.95rem; font-weight: 700; color: var(--gold); margin-bottom: 0.35rem; }
-    .why-card p { font-size: 0.88rem; color: #aaa; }
-    .cta-section { background: var(--asphalt); border-top: 2px solid var(--gold); text-align: center; }
-    .cta-section h2 { margin-bottom: 0.75rem; }
-    .cta-section p { color: #aaa; margin-bottom: 1.5rem; }
-    .breadcrumb { font-size: 0.82rem; color: var(--gray); margin-bottom: 0.75rem; }
-    .breadcrumb a { color: var(--gold); }
-    .breadcrumb a:hover { color: var(--gold-lt); }
-    footer { background: var(--black); border-top: 1px solid #222; padding: 2.5rem 1.5rem; text-align: center; color: var(--gray); font-size: 0.85rem; }
-    footer a { color: var(--gold); }
-    footer a:hover { color: var(--gold-lt); }
-    .footer-links { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1rem; }
-    @media (max-width: 700px) {
-      header { padding: 0 1rem; }
-      .hamburger { display: flex; }
-      nav { display: none; position: absolute; top: 64px; left: 0; right: 0; background: rgba(10,10,10,0.98); padding: 1rem; border-bottom: 2px solid var(--gold); }
-      .nav-open nav { display: block; }
-      nav ul { flex-direction: column; gap: 0.25rem; }
-      nav a { padding: 0.75rem 1rem; }
-    }
-    .city-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; margin-top: 2rem; }
-    .city-card { display: block; background: var(--asphalt); border: 1px solid #2a2a3e; border-radius: var(--radius); padding: 1.25rem 1.5rem; transition: border-color 0.2s, transform 0.15s; }
-    .city-card:hover { border-color: var(--gold); transform: translateY(-2px); }
-    .city-name { font-size: 1.05rem; font-weight: 700; color: var(--white); margin-bottom: 0.2rem; }
-    .city-county { font-size: 0.8rem; color: var(--gray); }
-    .city-distance { font-size: 0.78rem; color: var(--gold); margin-top: 0.4rem; font-weight: 600; }
-    .map-note { background: var(--asphalt); border: 1px solid #2a2a3e; border-radius: var(--radius); padding: 1.5rem; margin-top: 2rem; text-align: center; color: #aaa; font-size: 0.92rem; }
-  </style>
+    </script>
+
+    <style>
+        :root { --gold: #ffcc00; --black: #111; }
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; color: #333; }
+        .hero { background: var(--black); color: var(--gold); padding: 80px 20px; text-align: center; border-bottom: 8px solid var(--gold); }
+        .grid-section { max-width: 1100px; margin: 50px auto; padding: 0 20px; }
+        .city-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; margin-top: 20px; }
+        .city-grid a { text-decoration: none; color: #444; padding: 10px; background: #f4f4f4; border-radius: 4px; display: block; text-align: center; font-weight: bold; }
+        .city-grid a:hover { background: var(--gold); color: var(--black); }
+        h2 { border-bottom: 3px solid var(--gold); display: inline-block; padding-bottom: 5px; margin-top: 40px; }
+    </style>
 </head>
 <body>
 
-<header id="site-header">
-  <div class="logo">⬛ J. Worden &amp; Sons</div>
-  <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
-  <nav id="main-nav" aria-label="Main navigation">
-    <ul>
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="../index.html#services">Services</a></li>
-      <li><a href="../portfolio.html">Portfolio</a></li>
-      <li><a href="index.html" class="active">Locations</a></li>
-      <li><a href="../contact.html" class="nav-cta">Get an Estimate</a></li>
-    </ul>
-  </nav>
-</header>
-
-<div class="page-hero">
-  <span class="section-tag">Virginia Service Grid</span>
-  <h1>41 Virginia Cities, <span>One Standard</span></h1>
-  <p>J. Worden &amp; Sons Asphalt Paving serves 41 cities and communities across Virginia — from our home base in Chester to the Shenandoah Valley, Hampton Roads, and Northern Virginia.</p>
-  <a href="../contact.html" class="btn btn-primary">Get a Free Estimate</a>
-</div>
-
-<section>
-  <div class="container">
-    <span class="section-tag">Find Your City</span>
-    <h2>Select Your <span>Location</span></h2>
-    <p class="section-intro">Each location page includes local service details, what we offer in your area, and a direct path to request a free estimate. Every city receives the same 6-inch compacted stone base standard — no exceptions.</p>
-    <div class="city-grid">
-
-      <a href="chester-va.html" class="city-card">
-        <div class="city-name">Chester</div>
-        <div class="city-county">Chesterfield County</div>
-        <div class="city-distance">Our Home Base</div>
-      </a>
-      <a href="colonial-heights-va.html" class="city-card">
-        <div class="city-name">Colonial Heights</div>
-        <div class="city-county">City of Colonial Heights</div>
-        <div class="city-distance">~6 mi from Chester</div>
-      </a>
-      <a href="hopewell-va.html" class="city-card">
-        <div class="city-name">Hopewell</div>
-        <div class="city-county">City of Hopewell</div>
-        <div class="city-distance">~8 mi from Chester</div>
-      </a>
-      <a href="petersburg-va.html" class="city-card">
-        <div class="city-name">Petersburg</div>
-        <div class="city-county">City of Petersburg</div>
-        <div class="city-distance">~11 mi from Chester</div>
-      </a>
-      <a href="richmond-va.html" class="city-card">
-        <div class="city-name">Richmond</div>
-        <div class="city-county">City of Richmond</div>
-        <div class="city-distance">~15 mi from Chester</div>
-      </a>
-      <a href="midlothian-va.html" class="city-card">
-        <div class="city-name">Midlothian</div>
-        <div class="city-county">Chesterfield County</div>
-        <div class="city-distance">~16 mi from Chester</div>
-      </a>
-      <a href="mechanicsville-va.html" class="city-card">
-        <div class="city-name">Mechanicsville</div>
-        <div class="city-county">Hanover County</div>
-        <div class="city-distance">~22 mi from Chester</div>
-      </a>
-      <a href="glen-allen-va.html" class="city-card">
-        <div class="city-name">Glen Allen</div>
-        <div class="city-county">Henrico County</div>
-        <div class="city-distance">~25 mi from Chester</div>
-      </a>
-      <a href="short-pump-va.html" class="city-card">
-        <div class="city-name">Short Pump</div>
-        <div class="city-county">Henrico County</div>
-        <div class="city-distance">~28 mi from Chester</div>
-      </a>
-      <a href="powhatan-va.html" class="city-card">
-        <div class="city-name">Powhatan</div>
-        <div class="city-county">Powhatan County</div>
-        <div class="city-distance">~30 mi from Chester</div>
-      </a>
-      <a href="ashland-va.html" class="city-card">
-        <div class="city-name">Ashland</div>
-        <div class="city-county">Hanover County</div>
-        <div class="city-distance">~31 mi from Chester</div>
-      </a>
-      <a href="goochland-va.html" class="city-card">
-        <div class="city-name">Goochland</div>
-        <div class="city-county">Goochland County</div>
-        <div class="city-distance">~35 mi from Chester</div>
-      </a>
-      <a href="williamsburg-va.html" class="city-card">
-        <div class="city-name">Williamsburg</div>
-        <div class="city-county">City of Williamsburg</div>
-        <div class="city-distance">~48 mi from Chester</div>
-      </a>
-      <a href="tappahannock-va.html" class="city-card">
-        <div class="city-name">Tappahannock</div>
-        <div class="city-county">Essex County</div>
-        <div class="city-distance">~55 mi from Chester</div>
-      </a>
-      <a href="fredericksburg-va.html" class="city-card">
-        <div class="city-name">Fredericksburg</div>
-        <div class="city-county">City of Fredericksburg</div>
-        <div class="city-distance">~70 mi from Chester</div>
-      </a>
-      <a href="charlottesville-va.html" class="city-card">
-        <div class="city-name">Charlottesville</div>
-        <div class="city-county">City of Charlottesville</div>
-        <div class="city-distance">~75 mi from Chester</div>
-      </a>
-      <a href="newport-news-va.html" class="city-card">
-        <div class="city-name">Newport News</div>
-        <div class="city-county">City of Newport News</div>
-        <div class="city-distance">~75 mi from Chester</div>
-      </a>
-      <a href="suffolk-va.html" class="city-card">
-        <div class="city-name">Suffolk</div>
-        <div class="city-county">City of Suffolk</div>
-        <div class="city-distance">~80 mi from Chester</div>
-      </a>
-      <a href="hampton-va.html" class="city-card">
-        <div class="city-name">Hampton</div>
-        <div class="city-county">City of Hampton</div>
-        <div class="city-distance">~81 mi from Chester</div>
-      </a>
-      <a href="stafford-va.html" class="city-card">
-        <div class="city-name">Stafford</div>
-        <div class="city-county">Stafford County</div>
-        <div class="city-distance">~85 mi from Chester</div>
-      </a>
-      <a href="norfolk-va.html" class="city-card">
-        <div class="city-name">Norfolk</div>
-        <div class="city-county">City of Norfolk</div>
-        <div class="city-distance">~87 mi from Chester</div>
-      </a>
-      <a href="portsmouth-va.html" class="city-card">
-        <div class="city-name">Portsmouth</div>
-        <div class="city-county">City of Portsmouth</div>
-        <div class="city-distance">~90 mi from Chester</div>
-      </a>
-      <a href="chesapeake-va.html" class="city-card">
-        <div class="city-name">Chesapeake</div>
-        <div class="city-county">City of Chesapeake</div>
-        <div class="city-distance">~95 mi from Chester</div>
-      </a>
-      <a href="woodbridge-va.html" class="city-card">
-        <div class="city-name">Woodbridge</div>
-        <div class="city-county">Prince William County</div>
-        <div class="city-distance">~95 mi from Chester</div>
-      </a>
-      <a href="culpeper-va.html" class="city-card">
-        <div class="city-name">Culpeper</div>
-        <div class="city-county">Culpeper County</div>
-        <div class="city-distance">~95 mi from Chester</div>
-      </a>
-      <a href="dale-city-va.html" class="city-card">
-        <div class="city-name">Dale City</div>
-        <div class="city-county">Prince William County</div>
-        <div class="city-distance">~98 mi from Chester</div>
-      </a>
-      <a href="waynesboro-va.html" class="city-card">
-        <div class="city-name">Waynesboro</div>
-        <div class="city-county">City of Waynesboro</div>
-        <div class="city-distance">~100 mi from Chester</div>
-      </a>
-      <a href="virginia-beach-va.html" class="city-card">
-        <div class="city-name">Virginia Beach</div>
-        <div class="city-county">City of Virginia Beach</div>
-        <div class="city-distance">~105 mi from Chester</div>
-      </a>
-      <a href="manassas-va.html" class="city-card">
-        <div class="city-name">Manassas</div>
-        <div class="city-county">City of Manassas</div>
-        <div class="city-distance">~105 mi from Chester</div>
-      </a>
-      <a href="lynchburg-va.html" class="city-card">
-        <div class="city-name">Lynchburg</div>
-        <div class="city-county">City of Lynchburg</div>
-        <div class="city-distance">~110 mi from Chester</div>
-      </a>
-      <a href="warrenton-va.html" class="city-card">
-        <div class="city-name">Warrenton</div>
-        <div class="city-county">Fauquier County</div>
-        <div class="city-distance">~110 mi from Chester</div>
-      </a>
-      <a href="fairfax-va.html" class="city-card">
-        <div class="city-name">Fairfax</div>
-        <div class="city-county">City of Fairfax</div>
-        <div class="city-distance">~115 mi from Chester</div>
-      </a>
-      <a href="alexandria-va.html" class="city-card">
-        <div class="city-name">Alexandria</div>
-        <div class="city-county">City of Alexandria</div>
-        <div class="city-distance">~115 mi from Chester</div>
-      </a>
-      <a href="staunton-va.html" class="city-card">
-        <div class="city-name">Staunton</div>
-        <div class="city-county">City of Staunton</div>
-        <div class="city-distance">~115 mi from Chester</div>
-      </a>
-      <a href="arlington-va.html" class="city-card">
-        <div class="city-name">Arlington</div>
-        <div class="city-county">Arlington County</div>
-        <div class="city-distance">~120 mi from Chester</div>
-      </a>
-      <a href="tysons-va.html" class="city-card">
-        <div class="city-name">Tysons</div>
-        <div class="city-county">Fairfax County</div>
-        <div class="city-distance">~125 mi from Chester</div>
-      </a>
-      <a href="harrisonburg-va.html" class="city-card">
-        <div class="city-name">Harrisonburg</div>
-        <div class="city-county">City of Harrisonburg</div>
-        <div class="city-distance">~130 mi from Chester</div>
-      </a>
-      <a href="reston-va.html" class="city-card">
-        <div class="city-name">Reston</div>
-        <div class="city-county">Fairfax County</div>
-        <div class="city-distance">~130 mi from Chester</div>
-      </a>
-      <a href="ashburn-va.html" class="city-card">
-        <div class="city-name">Ashburn</div>
-        <div class="city-county">Loudoun County</div>
-        <div class="city-distance">~135 mi from Chester</div>
-      </a>
-      <a href="leesburg-va.html" class="city-card">
-        <div class="city-name">Leesburg</div>
-        <div class="city-county">Loudoun County</div>
-        <div class="city-distance">~140 mi from Chester</div>
-      </a>
-      <a href="winchester-va.html" class="city-card">
-        <div class="city-name">Winchester</div>
-        <div class="city-county">City of Winchester</div>
-        <div class="city-distance">~165 mi from Chester</div>
-      </a>
+    <div class="hero">
+        <h1 style="font-size: 48px; margin: 0;">Our Paving Service Areas</h1>
+        <p style="color: #fff; font-size: 22px; margin-top: 10px;">J. Worden & Sons: A 4th Generation National Paving Powerhouse</p>
     </div>
-    <div class="map-note">
-      📍 Based in <strong style="color:var(--gold)">Chester, Virginia</strong> (Chesterfield County) &bull; Serving all locations above and surrounding areas &bull; Commercial projects available at extended radius
-    </div>
-  </div>
-</section>
 
-<section style="background:#111;">
-  <div class="container" style="text-align:center;">
-    <span class="section-tag">Our Standard</span>
-    <h2>The Same Quality, <span>Every City</span></h2>
-    <p class="section-intro" style="margin:0 auto 2rem;">Whether you're in Richmond or Reston, Hampton or Harrisonburg — every J. Worden &amp; Sons project starts with a 6-inch compacted aggregate stone base. This is the same structural foundation used in municipal roadways and high-traffic commercial sites.</p>
-    <div style="display:inline-flex;align-items:center;gap:2rem;background:rgba(255,255,255,0.04);border:1px solid rgba(212,160,23,0.3);border-radius:8px;padding:2rem 3rem;flex-wrap:wrap;justify-content:center;">
-      <div style="font-size:4rem;font-weight:900;color:var(--gold);line-height:1;">6&Prime;</div>
-      <p style="color:#ccc;max-width:380px;text-align:left;font-size:1rem;">Compacted aggregate stone base. Applied across all 41 Virginia cities. No shortcuts. No exceptions.</p>
-    </div>
-  </div>
-</section>
+    <main class="grid-section">
+        
+        <h2>Virginia Empire (HQ Hub)</h2>
+        <div class="city-grid">
+            <a href="richmond-va.html">Richmond</a>
+            <a href="chester-va.html">Chester (HQ)</a>
+            <a href="midlothian-va.html">Midlothian</a>
+            <a href="alexandria-va.html">Alexandria</a>
+            <a href="arlington-va.html">Arlington</a>
+            <a href="ashburn-va.html">Ashburn</a>
+            <a href="ashland-va.html">Ashland</a>
+            <a href="charlottesville-va.html">Charlottesville</a>
+            <a href="chesapeake-va.html">Chesapeake</a>
+            <a href="colonial-heights-va.html">Colonial Heights</a>
+            <a href="culpeper-va.html">Culpeper</a>
+            <a href="fairfax-va.html">Fairfax</a>
+            <a href="fredericksburg-va.html">Fredericksburg</a>
+            <a href="glen-allen-va.html">Glen Allen</a>
+            <a href="goochland-va.html">Goochland</a>
+            <a href="hampton-va.html">Hampton</a>
+            <a href="harrisonburg-va.html">Harrisonburg</a>
+            <a href="hopewell-va.html">Hopewell</a>
+            <a href="leesburg-va.html">Leesburg</a>
+            <a href="lynchburg-va.html">Lynchburg</a>
+            <a href="manassas-va.html">Manassas</a>
+            <a href="mechanicsville-va.html">Mechanicsville</a>
+            <a href="newport-news-va.html">Newport News</a>
+            <a href="norfolk-va.html">Norfolk</a>
+            <a href="petersburg-va.html">Petersburg</a>
+            <a href="portsmouth-va.html">Portsmouth</a>
+            <a href="powhatan-va.html">Powhatan</a>
+            <a href="reston-va.html">Reston</a>
+            <a href="short-pump-va.html">Short Pump</a>
+            <a href="stafford-va.html">Stafford</a>
+            <a href="staunton-va.html">Staunton</a>
+            <a href="suffolk-va.html">Suffolk</a>
+            <a href="tappahannock-va.html">Tappahannock</a>
+            <a href="tysons-va.html">Tysons</a>
+            <a href="virginia-beach-va.html">Virginia Beach</a>
+            <a href="warrenton-va.html">Warrenton</a>
+            <a href="waynesboro-va.html">Waynesboro</a>
+            <a href="williamsburg-va.html">Williamsburg</a>
+            <a href="winchester-va.html">Winchester</a>
+            <a href="woodbridge-va.html">Woodbridge</a>
+        </div>
 
-<section class="cta-section">
-  <div class="container">
-    <h2>Don't See Your City? <span>We Still Cover You.</span></h2>
-    <p>Our service area extends beyond these 41 cities for commercial projects. Call us to discuss your location.</p>
-    <a href="../contact.html" class="btn btn-primary">📋 Request a Free Estimate</a>
-    <p style="margin-top:1rem;font-size:0.9rem;">Or call: <a href="tel:8044461296" style="color:var(--gold);font-weight:700;">804-446-1296</a></p>
-  </div>
-</section>
+        <h2>Kansas City Metro Empire</h2>
+        <div class="city-grid">
+            <a href="overland-park-ks.html">Overland Park</a>
+            <a href="olathe-ks.html">Olathe</a>
+            <a href="leawood-ks.html">Leawood</a>
+            <a href="shawnee-ks.html">Shawnee</a>
+            <a href="lenexa-ks.html">Lenexa</a>
+            <a href="prairie-village-ks.html">Prairie Village</a>
+            <a href="kansas-city-mo.html">Kansas City MO</a>
+            <a href="lees-summit-mo.html">Lee's Summit</a>
+            <a href="independence-mo.html">Independence</a>
+            <a href="blue-springs-mo.html">Blue Springs</a>
+            <a href="liberty-mo.html">Liberty</a>
+            <a href="belton-mo.html">Belton</a>
+            <a href="raymore-mo.html">Raymore</a>
+            <a href="gladstone-mo.html">Gladstone</a>
+            <a href="parkville-mo.html">Parkville</a>
+            <a href="smithville-mo.html">Smithville</a>
+            <a href="grandview-mo.html">Grandview</a>
+            <a href="kearney-mo.html">Kearney</a>
+            <a href="excelsior-springs-mo.html">Excelsior Springs</a>
+            <a href="grain-valley-mo.html">Grain Valley</a>
+            <a href="oak-grove-mo.html">Oak Grove</a>
+            <a href="peculiar-mo.html">Peculiar</a>
+            <a href="harrisonville-mo.html">Harrisonville</a>
+            <a href="greenwood-mo.html">Greenwood</a>
+            <a href="pleasant-hill-mo.html">Pleasant Hill</a>
+            <a href="north-kansas-city-mo.html">North KC</a>
+            <a href="raytown-mo.html">Raytown</a>
+            <a href="riverside-mo.html">Riverside</a>
+            <a href="weatherby-lake-mo.html">Weatherby Lake</a>
+            <a href="basehor-ks.html">Basehor</a>
+            <a href="bonner-springs-ks.html">Bonner Springs</a>
+            <a href="mission-ks.html">Mission</a>
+            <a href="roeland-park-ks.html">Roeland Park</a>
+            <a href="fairway-ks.html">Fairway</a>
+            <a href="northmoor-mo.html">Northmoor</a>
+            <a href="avondale-mo.html">Avondale</a>
+            <a href="platte-city-mo.html">Platte City</a>
+            <a href="weston-mo.html">Weston</a>
+            <a href="edwardsville-ks.html">Edwardsville</a>
+            <a href="merriam-ks.html">Merriam</a>
+            <a href="de-soto-ks.html">De Soto</a>
+        </div>
 
-<footer>
-  <div class="footer-links">
-    <a href="../index.html">Home</a>
-    <a href="../index.html#services">Services</a>
-    <a href="../portfolio.html">Portfolio</a>
-    <a href="index.html">Locations</a>
-    <a href="../contact.html">Contact / Estimate</a>
-  </div>
-  <p>
-    <strong style="color:var(--gold)">J. Worden &amp; Sons Asphalt Paving</strong> &mdash;
-    Chester, VA &mdash; Serving 41 Virginia Cities &mdash;
-    <a href="tel:8044461296">804-446-1296</a>
-  </p>
-  <p style="margin-top:0.5rem">&copy; <span id="yr"></span> J. Worden &amp; Sons. All rights reserved. Licensed &amp; Insured.</p>
-  <p style="margin-top:0.5rem;font-size:0.72rem;"><em>J. Worden &amp; Sons Asphalt Paving is an independent family business and is not affiliated with any other Worden-named paving business in Chester, Virginia or elsewhere.</em></p>
-</footer>
+    </main>
 
-<script>
-  document.getElementById('yr').textContent = new Date().getFullYear();
-  const header = document.getElementById('site-header');
-  const hamburger = document.getElementById('hamburger');
-  hamburger.addEventListener('click', () => {
-    const open = header.classList.toggle('nav-open');
-    hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
-  document.querySelectorAll('#main-nav a').forEach(link => {
-    link.addEventListener('click', () => {
-      header.classList.remove('nav-open');
-      hamburger.setAttribute('aria-expanded', 'false');
-    });
-  });
-</script>
+    <footer style="text-align: center; padding: 50px; background: var(--black); color: #ccc;">
+        <p style="color: #fff; font-weight: bold;">J. Worden & Sons Asphalt Paving</p>
+        <p>1601 Ware Bottom Springs Rd, Suite 214, Chester, VA 23836</p>
+        <p>&copy; 2026 J. Worden & Sons. All Rights Reserved.</p>
+    </footer>
+
 </body>
 </html>
