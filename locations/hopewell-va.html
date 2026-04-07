@@ -3,101 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Asphalt Paving in Hopewell, VA | J. Worden & Sons</title>
-    <meta name="description" content="J. Worden & Sons Asphalt Paving is Hopewell's top-rated, 4th-generation paving contractor. Get a free estimate for driveway and commercial paving today.">
-    
-    <link rel="stylesheet" href="../style.css">
-
+    <title>Asphalt Paving Hopewell VA | J. Worden & Sons | Class A Licensed</title>
+    <meta name="description" content="J. Worden & Sons Asphalt Paving: Hopewell's 4th-generation paving experts. Specialized in industrial, commercial, and residential asphalt solutions since 1984.">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "PavingBusiness",
-      "name": "J. Worden & Sons Asphalt Paving - Hopewell",
-      "parentOrganization": {
-        "@type": "Organization",
-        "name": "J. Worden & Sons Asphalt Paving",
-        "url": "https://jwordenasphaltpaving.com"
-      },
-      "areaServed": {
-        "@type": "City",
-        "name": "Hopewell",
-        "containedInPlace": {
-          "@type": "State",
-          "name": "Virginia"
-        }
-      },
-      "description": "Premium paving and sealcoating services in Hopewell, VA."
+      "@type": "PavingContractor",
+      "name": "J. Worden & Sons Asphalt Paving",
+      "url": "https://jwordenasphaltpaving.com/va/hopewell",
+      "address": {"@type": "PostalAddress", "addressLocality": "Hopewell", "addressRegion": "VA"},
+      "geo": {"@type": "GeoCoordinates", "latitude": "37.3038", "longitude": "-77.2872"},
+      "areaServed": "Hopewell, VA",
+      "hasCredential": "Class A Contractor License"
     }
     </script>
 </head>
-<body>
-
-    <nav>
-        <div class="logo" style="color: var(--gold); font-weight: bold; font-size: 1.2rem;">J. WORDEN & SONS</div>
-        <div>
-            <a href="../index.html">Home</a>
-            <a href="#quote">Get a Quote</a>
+<body style="font-family: Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; color: #333;">
+    <div style="background: #111; color: #ffcc00; padding: 60px 20px; text-align: center; border-bottom: 5px solid #ffcc00;">
+        <h1 style="font-size: 42px; margin: 0;">Asphalt Paving Hopewell, VA</h1>
+        <p style="color: #fff; font-size: 22px; margin-top: 10px;">Industrial & Residential Paving Excellence</p>
+    </div>
+    <main style="max-width: 900px; margin: 40px auto; padding: 0 20px;">
+        <div style="background: #f9f9f9; padding: 35px; border-left: 10px solid #ffcc00;">
+            <p style="font-size: 18px;">J. Worden & Sons is Hopewell’s trusted partner for heavy-duty asphalt. From industrial facility entrances to residential driveways, our Class A licensed team delivers the durability Hopewell businesses demand. We bring 4th-generation expertise to every grading and paving project.</p>
         </div>
-    </nav>
-
-    <section class="section" style="text-align: center; border-bottom: 1px solid #333;">
-        <h1 class="text-gold">Asphalt Paving in Hopewell, VA</h1>
-        <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto;">
-            For four generations, J. Worden & Sons has delivered premium asphalt solutions. Whether it is a commercial parking lot or a residential driveway right here in <strong>Hopewell</strong>, we build surfaces that last.
-        </p>
-    </section>
-
-    <section id="quote" class="section">
-        <div class="card" style="max-width: 600px; margin: 0 auto; border-top: 4px solid var(--gold);">
-            <h2 style="text-align: center;">Get Your Hopewell Estimate</h2>
-            <form id="lead-form">
-                <div style="display: flex; gap: 15px; margin-bottom: 15px;">
-                    <input type="text" name="customer_name" placeholder="Full Name" style="width: 100%; padding: 12px;" required>
-                    <input type="email" name="customer_email" placeholder="Email Address" style="width: 100%; padding: 12px;" required>
-                </div>
-                <div style="display: flex; gap: 15px; margin-bottom: 15px;">
-                    <input type="tel" name="customer_phone" placeholder="Phone Number" style="width: 100%; padding: 12px;" required>
-                    <select name="service_type" style="width: 100%; padding: 12px;">
-                        <option value="asphalt_paving">Asphalt Paving</option>
-                        <option value="sealcoating">Sealcoating</option>
-                        <option value="repair">Maintenance/Repair</option>
-                    </select>
-                </div>
-                <textarea name="job_description" rows="4" placeholder="Tell us about your project in Hopewell..." style="width: 100%; padding: 12px; margin-bottom: 15px;"></textarea>
-                
-                <input type="hidden" name="source_url" id="source_url">
-                
-                <button type="submit" style="width: 100%; padding: 15px; background: var(--gold); color: black; font-weight: bold; cursor: pointer; text-transform: uppercase; border: none;">Submit Request</button>
-            </form>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 J. Worden & Sons Asphalt Paving. 4th Generation Legacy.</p>
-        <p>Headquarters: 1601 Ware Bottom Springs Rd, Suite 214, Chester, VA 23836</p>
+    </main>
+    <footer style="text-align: center; padding: 40px; background: #1a1a1a; color: #ccc;">
+        <p>J. Worden & Sons | 1601 Ware Bottom Springs Rd, Suite 214, Chester, VA 23836</p>
     </footer>
-
-    <script>
-        document.getElementById('source_url').value = window.location.href;
-        document.getElementById('lead-form').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const formData = new FormData(e.target);
-            try {
-                const response = await fetch('/.netlify/functions/send-to-kickserv', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(Object.fromEntries(formData))
-                });
-                if(response.ok) {
-                    alert('Thanks! Our team will contact you shortly regarding your project in Hopewell.');
-                    e.target.reset();
-                } else {
-                    throw new Error('Network response was not ok');
-                }
-            } catch (error) {
-                alert('There was an issue sending your request. Please call our Chester HQ directly!');
-            }
-        });
-    </script>
 </body>
 </html>
