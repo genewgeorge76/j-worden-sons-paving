@@ -1,0 +1,20 @@
+[
+  {
+    "city": "Richmond",
+    "state": "VA",
+    "slug": "paving-richmond-va",
+    "nearbyProject": "Tyson Foods Temperanceville",
+    "climateNote": "Mid-Atlantic freeze-thaw durability",
+    "hq_distance": "12",
+    "meta_desc": "Elite commercial paving in Richmond. Vetted by Tyson Foods and KFC."
+  },
+  {
+    "city": "Hillsdale",
+    "state": "MI",
+    "slug": "paving-hillsdale-mi",
+    "nearbyProject": "KBP Foods / KFC National Build",
+    "climateNote": "High-viscosity Michigan winter mix",
+    "hq_distance": "National Mobile Unit",
+    "meta_desc": "Industrial-grade paving in Hillsdale. Experts in cold-weather infrastructure."
+  }
+]
