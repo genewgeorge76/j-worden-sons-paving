@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asphalt Paving in {{city}}, {{state}} | J. Worden & Sons</title>
+    <meta name="description" content="{{meta_desc}}">
+    <link rel="stylesheet" href="/style.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "PavingContractor",
+      "name": "J. Worden & Sons Asphalt Paving",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1601 Ware Bottom Springs Rd, Suite 214",
+        "addressLocality": "Chester",
+        "addressRegion": "VA",
+        "postalCode": "23836"
+      },
+      "areaServed": "{{city}}, {{state}}"
+    }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Industrial-Grade Paving for {{city}}</h1>
+        <p>Serving you from our Chester HQ ({{hq_distance}} miles away).</p>
+        <div id="estimator-app">
+            <h2>Instant {{city}} Paving Estimate</h2>
+            <p>Loading J. Worden & Sons Precision Estimator...</p>
+        </div>
+    </header>
+
+    <section class="b2b-lockin">
+        <h2>Commercial Asset Protection: 8-Year Lifecycle</h2>
+        <p>Engineered for {{city}}'s climate: {{climateNote}}.</p>
+        <ul>
+            <li>Year 1-2: Seal & Stripe</li>
+            <li>Year 4: Crack Routing</li>
+            <li>Year 6: Structural Sealcoat</li>
+            <li>Year 8: Asset Audit</li>
+        </ul>
+    </section>
+
+    <section class="trust">
+        <h2>National Authority</h2>
+        <p>Providing {{city}} the same standards used for <strong>{{nearbyProject}}</strong>.</p>
+    </section>
+</body>
+</html>
