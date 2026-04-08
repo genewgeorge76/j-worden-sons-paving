@@ -6,8 +6,11 @@ export const Route = createFileRoute('/locations/$city')({
 
 function CityTemplate() {
   const { city } = Route.useParams()
-  // This cleans up the name (e.g., "glen-allen" becomes "Glen Allen")
-  const cityName = city.charAt(0).toUpperCase() + city.slice(1).replace(/-/g, ' ')
+  // This turns "glen-allen" into "Glen Allen"
+  const cityName = city
+    .split('-')
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ')
 
   return (
     <main className="min-h-screen bg-[#111111] text-white font-sans">
@@ -28,7 +31,7 @@ function CityTemplate() {
 
       <section className="py-12 bg-[#ffcc00] text-black text-center">
         <h2 className="text-3xl font-black uppercase">Schedule Your {cityName} Estimate</h2>
-        <p className="text-xl font-bold mt-2">Call Our Chester HQ: (804) 446-1296</p>
+        <p className="text-xl font-bold mt-2 text-black">Call Our Chester HQ: (804) 446-1296</p>
       </section>
     </main>
   )
