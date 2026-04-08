@@ -12,7 +12,7 @@ export const Route = createFileRoute('/standards')({
             Premium <span className="text-[#ffcc00]">Standards</span>
           </h1>
           <p className="text-xl text-gray-400 max-w-2xl border-l-4 border-[#ffcc00] pl-6">
-            4th-Generation Asphalt Paving excellence. We build foundations that last for decades in Richmond and the 41 surrounding cities.
+            4th-Generation Asphalt Paving excellence. We build foundations that last for decades in Richmond and 41 surrounding cities.
           </p>
         </div>
       </section>
