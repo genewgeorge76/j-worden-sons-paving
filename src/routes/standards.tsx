@@ -16,17 +16,9 @@ export const Route = createFileRoute('/standards')({
           </p>
         </div>
       </section>
-      <section className="py-20 px-6">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8">
-          <div className="bg-black/40 p-10 border border-white/10">
-            <h3 className="text-[#ffcc00] font-black uppercase text-2xl mb-4">Material Quality</h3>
-            <p className="text-gray-300">High-stability surface courses with optimized liquid asphalt content.</p>
-          </div>
-          <div className="bg-black/40 p-10 border border-white/10">
-            <h3 className="text-[#ffcc00] font-black uppercase text-2xl mb-4">Engineering Precision</h3>
-            <p className="text-gray-300">Laser-leveled sub-base and 2% minimum drainage slope for every job.</p>
-          </div>
-        </div>
+      <section className="py-20 px-6 text-center">
+        <h3 className="text-[#ffcc00] font-black uppercase text-2xl mb-4">Material Quality</h3>
+        <p className="text-gray-300">Commercial-grade high-stability surface courses for Virginia weather cycles.</p>
       </section>
     </main>
   ),
