@@ -12,11 +12,10 @@ export const Route = createFileRoute('/standards')({
             Premium <span className="text-[#ffcc00]">Standards</span>
           </h1>
           <p className="text-xl text-gray-400 max-w-2xl">
-            4th-Generation Asphalt Paving excellence. We don't just pave; we build foundations that last.
+            4th-Generation Asphalt Paving excellence. We build foundations that last for decades.
           </p>
         </div>
       </section>
-
       <section className="py-20 px-6">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8">
           <div className="bg-black/40 p-10 border border-white/10">
