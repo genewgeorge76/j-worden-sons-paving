@@ -1,0 +1,43 @@
+export default async (request, context) => {
+  const url = new URL(request.url);
+  // This grabs the last part of the URL (e.g., "paving-richmond-va")
+  const slug = url.pathname.split('/').filter(Boolean).pop();
+
+  // 1. Point to your data file using a relative URL
+  const dataUrl = new URL("/data/locations.json", request.url);
+  
+  try {
+    const response = await fetch(dataUrl);
+    if (!response.ok) {
+      console.error("Data fetch failed:", response.statusText);
+      return;
+    }
+
+    const cities = await response.json();
+    // 2. Find the city data that matches the URL slug
+    const cityData = cities.find(c => c.slug === slug);
+
+    // If the city isn't in our list, let Netlify handle it normally (or show 404)
+    if (!cityData) return;
+
+    // 3. Load the Master Template from your repository
+    let template = await Deno.readTextFile("./templates/location-master.html");
+
+    // 4. THE ENGINE: Programmatically swap placeholders with real data
+    const finalHtml = template
+      .replaceAll("{{city}}", cityData.city)
+      .replaceAll("{{state}}", cityData.state)
+      .replaceAll("{{hq_distance}}", cityData.hq_distance)
+      .replaceAll("{{climateNote}}", cityData.climateNote)
+      .replaceAll("{{nearbyProject}}", cityData.nearbyProject)
+      .replaceAll("{{meta_desc}}", cityData.meta_desc);
+
+    return new Response(finalHtml, {
+      headers: { "content-type": "text/html; charset=UTF-8" },
+    });
+
+  } catch (error) {
+    console.error("Programmatic Engine Error:", error);
+    return;
+  }
+};
